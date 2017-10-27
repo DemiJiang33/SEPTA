@@ -1,0 +1,125 @@
+/*.gm-style-iw + div {display: none;}*/
+
+body {
+	margin: 0;
+	padding: 0; 
+	background: #f5f5f5;
+}
+
+#app {
+	margin: 0 auto;
+	width: 100%;
+	background: white; 
+	border-radius: 5px;
+	padding: 20px;
+}
+
+#map{
+	padding-bottom: 35%;
+    border: 1px solid #dddddd;
+}
+
+@media screen and (max-width: 768px){
+	#map{
+	padding-bottom: 75%;
+}
+}
+
+p{
+	font-size: large;
+}
+
+p br{
+	display: none;
+}
+
+h3{
+	font-size:large;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 425px){
+	p{
+	font-size: medium;
+}
+	p br{
+	display: inline;
+}
+    h3{
+	font-size:medium;
+	font-weight: bold;
+}
+}
+
+@media screen and (max-width: 320px){
+	p{
+	font-size: small;
+}
+}
+
+input {
+	border: 1px solid;
+	margin-left: 0px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	width: 100% ;
+	font-size: large;
+}
+
+@media screen and (max-width: 768px){
+	input {
+	font-size: medium;
+}
+}
+
+@media screen and (max-width: 375px){
+	input {
+	font-size: small;
+}
+}
+
+label{
+	border: 1px solid #dddddd;
+}
+
+table {
+	font-family: arial, sans-serif;
+	table-layout: fixed; 
+	word-wrap: break-word;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td,th{
+	border: 1px solid #dddddd;
+	text-align: center;
+	padding: 8px;
+	font-size: medium;
+	height: 39px;
+}
+
+th{
+	border: 1px solid white;
+	background-color: #dddddd;
+}
+
+@media screen and (max-width: 768px){
+	td,th{
+	padding: 1px;
+	font-size: small;
+}
+
+@media screen and (max-width: 425px){
+	td#hideTd1,td#hideTd2,th#hideTh1,th#hideTh2{
+		display: none;
+	}
+	td#nextStopTd,th#nextStopTh{
+		width: 26%;
+	}
+}
+
+
+/*tr:nth-child(even) {
+	background-color: #dddddd;
+}
+*/
