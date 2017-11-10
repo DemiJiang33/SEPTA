@@ -7,6 +7,7 @@ module.exports = {
   // in the current directory in the build subdirectory, with a name of build.js
   output: {
     path: __dirname + "/build",
+    publicPath: '/',
     filename: "build.js"
   },
   /*devServer: {
@@ -25,6 +26,10 @@ module.exports = {
         loader: 'babel-loader'
       }
     ]
+  },
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './'
   },
   plugins: [new HtmlWebpackPlugin({
     template: './app/index.html'
