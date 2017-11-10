@@ -34,7 +34,7 @@ class Clock extends React.Component{
 
 		return(
 			<div id ="clock">
-			<p id ="date">SEPTA TrainView <img src ="../images/favicon.ico"/> {day} <br/>
+			<p id ="date">SEPTA <img src ="../images/favicon.ico"/> {day} <br/>
 			{this.state.date.toLocaleString()}</p>
 			</div>
 			)
