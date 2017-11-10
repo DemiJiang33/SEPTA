@@ -1,4 +1,17 @@
 /*.gm-style-iw + div {display: none;}*/
+.gm-style-cc {
+	display: none !important;
+}
+
+.gm-style a[href^="https://maps.google.com/maps"] {
+	display: none !important;
+}
+
+hr{
+	border-width: 2px;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
 
 body {
 	margin: 0;
@@ -16,13 +29,7 @@ body {
 
 #map{
 	padding-bottom: 35%;
-    border: 1px solid #dddddd;
-}
-
-@media screen and (max-width: 768px){
-	#map{
-	padding-bottom: 75%;
-}
+	border: 1px solid #dddddd;
 }
 
 p{
@@ -38,49 +45,92 @@ h3{
 	font-weight: bold;
 }
 
+input.form-control{
+	font-size: large
+}
+
+div .menu1, .menu2, .menu3, .menu4{
+  float:left;
+  width:25%;
+  text-align:center;
+}
+
+td,th{
+	border: 1px solid #dddddd;
+	text-align: center;
+	padding: 8px;
+	font-size: large;
+	height: 71px;
+}
+
+th{
+	border: 1px solid white;
+	background-color: #dddddd;
+}
+
+td br{
+	display: none;
+}
+
+@media screen and (max-width: 1024px){
+	#map{
+		padding-bottom: 50%;
+	}
+}
+
+@media screen and (max-width: 768px){
+	#map{
+		padding-bottom: 75%;
+	}
+
+	input.form-control {
+		font-size: medium;
+	}
+
+	td,th{
+		padding: 1px;
+	}
+	td br{
+		display: inline;
+	}
+	td#hideTd1,td#hideTd2,th#hideTh1,th#hideTh2{
+		display: none;
+	}
+	td#nextStopTd,th#nextStopTh{
+		width: 26%;
+	}
+
+	div .menu1, .menu2, .menu3, .menu4{
+    width:50%;
+  }
+}
+
 @media screen and (max-width: 425px){
 	p{
-	font-size: medium;
-}
+		font-size: medium;
+	}
 	p br{
-	display: inline;
-}
-    h3{
-	font-size:medium;
-	font-weight: bold;
-}
+		display: inline;
+	}
+	h3{
+		font-size:medium;
+		font-weight: bold;
+	}
+
+	td,th{
+		font-size: medium;
+	}
 }
 
 @media screen and (max-width: 320px){
 	p{
-	font-size: small;
-}
-}
-
-input {
-	border: 1px solid;
-	margin-left: 0px;
-	margin-bottom: 10px;
-	border-radius: 5px;
-	width: 100% ;
-	font-size: large;
+		font-size: small;
+	}
+	input.form-control {
+		font-size: small;
+	}
 }
 
-@media screen and (max-width: 768px){
-	input {
-	font-size: medium;
-}
-}
-
-@media screen and (max-width: 375px){
-	input {
-	font-size: small;
-}
-}
-
-label{
-	border: 1px solid #dddddd;
-}
 
 table {
 	font-family: arial, sans-serif;
@@ -90,36 +140,6 @@ table {
 	width: 100%;
 }
 
-td,th{
-	border: 1px solid #dddddd;
-	text-align: center;
-	padding: 8px;
-	font-size: medium;
-	height: 39px;
+table#result_content:hover {
+    background-color: #eeeeee;
 }
-
-th{
-	border: 1px solid white;
-	background-color: #dddddd;
-}
-
-@media screen and (max-width: 768px){
-	td,th{
-	padding: 1px;
-	font-size: small;
-}
-
-@media screen and (max-width: 425px){
-	td#hideTd1,td#hideTd2,th#hideTh1,th#hideTh2{
-		display: none;
-	}
-	td#nextStopTd,th#nextStopTh{
-		width: 26%;
-	}
-}
-
-
-/*tr:nth-child(even) {
-	background-color: #dddddd;
-}
-*/
