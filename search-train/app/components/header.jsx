@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Header = () => (
   <header>
     <Link to='/'>Home</Link>&nbsp;|&nbsp;
-    <Link to='/regionalRail'>Regional Rail</Link>&nbsp;|&nbsp;
+    <Link to='/regionalrail'>Regional Rail</Link>&nbsp;|&nbsp;
     <Link to='/bus_trolley'>Bus/Trolley</Link>
   </header>
 )

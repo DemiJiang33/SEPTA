@@ -12,7 +12,7 @@ class SocialMedia extends React.Component{
 
 	componentDidMount(){
 		const API_KEY = "7ee17c4f8e6f1b0d2fe3cc0f71fce04c";
-		const ROOT_URL = `http://api.openweathermap.org/data/2.5/weather?id=4560349&units=imperial&appid=${API_KEY}`;
+		const ROOT_URL = `https://api.openweathermap.org/data/2.5/weather?id=4560349&units=imperial&appid=${API_KEY}`;
 
 		fetchJsonp(ROOT_URL,{
 			timeout: 6000,

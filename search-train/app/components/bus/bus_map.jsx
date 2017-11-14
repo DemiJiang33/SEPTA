@@ -7,10 +7,10 @@ var map;
 var selectedInfoWindow = null;
 var selectedMarkerID = null;
 
-const DEFAULT_POSITION = {
+/*const DEFAULT_POSITION = {
   lat: 39.9526,
   lng: -75.1652 
-};
+};*/
 
 var route;
 
@@ -45,8 +45,7 @@ class BusMap extends React.Component{
 		}
 
 		map = new google.maps.Map(this.refs.map, {
-			center: DEFAULT_POSITION,
-			minZoom: 0,
+			//center: DEFAULT_POSITION,
 			zoom: 10,
 			mapTypeControl: false,
 			gestureHandling: 'greedy'
@@ -64,13 +63,13 @@ class BusMap extends React.Component{
 		map.setOptions({styles: noPoi});
 
 		this.timeoutID1 = setTimeout(
-			() => this.septaTransitView(),
-			500
+			() => google.maps.event.addDomListener(window, 'load', this.septaTransitView()),
+			100
 			);
 
 		this.timeoutID2 = setTimeout(
-			() => google.maps.event.addDomListener(window, 'load', this.initMap()),
-			1000
+			() => this.initMap(),
+			500
 			);
 
 		this.handleID = setInterval(
@@ -89,14 +88,14 @@ class BusMap extends React.Component{
 	septaTransitView() {
 		google.maps.event.addListenerOnce(map, 'zoom_changed', function() {
 			var width = window.innerWidth;
-			if (width <= 375){
+			if (width < 375){
+				// set the zoom level to 10.
+				map.setZoom(10);
+			}else if (width < 768){
 				// set the zoom level to 11.
 				map.setZoom(11);
-			}else if (width <= 768){
-				// set the zoom level to 12.
-				map.setZoom(12);
 			}else{
-				map.setZoom(13);
+				map.setZoom(12);
 			}
 			});
 
@@ -104,6 +103,12 @@ class BusMap extends React.Component{
 			url: 'http://www3.septa.org/transitview/kml/' + route + '.kml',
 			map: map,
 			preserveViewport:false
+		});
+
+		google.maps.event.addListener(ctaLayer, 'defaultviewport_changed', function() {
+			var getCenter = ctaLayer.getDefaultViewport().getCenter();
+			map.setCenter(getCenter);
+			//console.log(getCenter.toUrlValue(6));
 		}); 
 
 	}

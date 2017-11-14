@@ -31,7 +31,7 @@ class AppTrain extends React.Component{
     //http://apitest.septa.org/beta/TrainView/    The old API
 	tick(){
 		//get the TrainView API data
-		fetchJsonp(`http://www3.septa.org/api/TrainView/index.php`,{
+		fetchJsonp(`https://www3.septa.org/api/TrainView/index.php`,{
 			timeout: 6000,
 		}).then(
 		response =>{
@@ -42,7 +42,7 @@ class AppTrain extends React.Component{
 		});
 
 		//get the Alert API data
-		fetchJsonp(`http://www3.septa.org/api/Alerts/get_alert_data.php?
+		fetchJsonp(`https://www3.septa.org/api/Alerts/get_alert_data.php?
 			req1=rr_route_warm,rr_route_gc,rr_route_med,rr_route_apt,
 			rr_route_che,rr_route_chw,rr_route_cyn,rr_route_fxc,rr_route_landdoy,
 			rr_route_nor,rr_route_pao,rr_route_trent,rr_route_wilm,rr_route_wtren`,{
@@ -60,7 +60,7 @@ class AppTrain extends React.Component{
 		return(
 			<div className = "component">
 			<Header />
-		    <Clock />
+		    <Clock title = "Regional Rail " />
 		    <Search trains={this.state.trains} alertTrains={this.state.alertTrains} />
 		    <SocialMedia />
 		    </div>

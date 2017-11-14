@@ -11,9 +11,10 @@ ReactDOM.render(
 	<BrowserRouter>
 	<div>
 	<Switch>
-	<Route path='/:bt/:route' component={Bus}/>
+	<Route path='/trolley/:route' component={Bus}/>
+	<Route path='/bus/:route' component={Bus}/>
 	<Route path='/bus_trolley' component={AppBusTrolley}/>
-	<Route path = "/regionalRail" component={AppTrain} />
+	<Route path = "/regionalrail" component={AppTrain} />
 	<Route path = "/" component={App} />
 	</Switch>
 	</div>

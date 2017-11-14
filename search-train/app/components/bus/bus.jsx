@@ -15,18 +15,43 @@ class Bus extends React.Component{
 			buses: [],
 			alerts:[],
 			route: '',
-			bt: ''
+			bt: '',
+			title: 'Bus/Trolley '
 		}
 	}
 
 	componentDidMount(){
-		var bt = this.props.match.params.bt;
-		this.setState({bt: bt});
+		var bt;
+
 		var route = this.props.match.params.route;
 		this.setState({route: route});
 
+		const array = [10,11,13,15,34,36,101,102];
+		Array.prototype.contains = function(obj) {
+			var i = this.length;
+			while (i--) {
+				if (this[i] == obj) {
+					return true;
+				}
+			}
+			return false;
+		}
+		if(array.contains(route)){
+			bt = "trolley";
+			this.setState({
+				bt: bt,
+				title: "Trolley "
+			});
+		}else{
+			bt = "bus";
+			this.setState({
+				bt: bt,
+				title: "Bus "
+			});
+		}
+
 		//console.log(route);
-		var url = "http://www3.septa.org/hackathon/TransitView/?route=" + route;
+		var url = "https://www3.septa.org/hackathon/TransitView/?route=" + route;
 
 		//get the detail of TransitView API data
 		fetchJsonp(url)
@@ -39,7 +64,7 @@ class Bus extends React.Component{
 				this.setState({buses: json.bus});
 			});
 
-		var url2 = "http://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt+"_route_" + route;
+		var url2 = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt+"_route_" + route;
 
 		//get the detail of Alerts API data
 		fetchJsonp(url2)
@@ -58,7 +83,7 @@ class Bus extends React.Component{
 		return(
 			<div>
 			<Header />
-		    <Clock />
+		    <Clock title = {this.state.title} />
 		    <Search buses={this.state.buses} route={this.state.route} 
 		    alerts={this.state.alerts} bt={this.state.bt} />
 		    <SocialMedia />

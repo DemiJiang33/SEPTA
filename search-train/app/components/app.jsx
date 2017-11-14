@@ -10,11 +10,11 @@ class App extends React.Component{
 
 		return(
 			<center>
-			<Clock />
+			<Clock title = "SEPTA " />
 			<br/>
 			<br/>
 			<div>
-			  <Link to='/regionalRail'>
+			  <Link to='/regionalrail'>
 			    <img src='../images/RegionalRail.png' />
 			    <br/>
 			    <h4>Regional Rail</h4>

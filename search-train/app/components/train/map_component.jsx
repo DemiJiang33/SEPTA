@@ -9,10 +9,10 @@ var map;
 var selectedInfoWindow = null;
 var selectedMarkerID = null;
 
-const DEFAULT_POSITION = {
+/*const DEFAULT_POSITION = {
   lat: 39.9526,
   lng: -75.1652 
-};
+};*/
 
 class MapComponent extends React.Component {
 
@@ -47,8 +47,7 @@ class MapComponent extends React.Component {
     }
 
     map = new google.maps.Map(this.refs.map, {
-      center: DEFAULT_POSITION,
-      minZoom: 0,
+      //center: DEFAULT_POSITION,
       zoom: 10,
       mapTypeControl: false,
       gestureHandling: 'greedy'
@@ -116,6 +115,12 @@ class MapComponent extends React.Component {
       map: map,
       preserveViewport:false
     }); 
+
+    google.maps.event.addListener(ctaLayer, 'defaultviewport_changed', function() {
+      var getCenter = ctaLayer.getDefaultViewport().getCenter();
+      map.setCenter(getCenter);
+      //console.log(getCenter.toUrlValue(6));
+    });
 
   }
 
@@ -198,19 +203,19 @@ class MapComponent extends React.Component {
             case 'Chestnut Hill East':
             imageStr += modifier + 'CHE.png';
             break;
-            case 'Media/Elwyn':
+            case 'Media\/Elwyn':
             imageStr += modifier + 'MED.png';
             break;
             case 'Manayunk\/Norristown':
             imageStr += modifier + 'NOR.png';
             break;
-            case 'Wilmington/Newark':
+            case 'Wilmington\/Newark':
             imageStr += modifier + 'WIL.png';
             break;
             case 'Trenton':
             imageStr += modifier + 'TRE.png';
             break;
-            case 'Paoli/Thorndale':
+            case 'Paoli\/Thorndale':
             imageStr += modifier + 'PAO.png';
             break;
             case 'Airport':
@@ -403,9 +408,9 @@ class MapComponent extends React.Component {
         {/*<button onClick={this.septaTrainView}>Refresh the Train View</button>
         &nbsp;&nbsp;
         <button onClick={this.clearMarkers}>Clear the Train Marker</button>
-        &nbsp;&nbsp;
-        <button onClick={this.displayLocation}>Display My Location</button>
         &nbsp;&nbsp;*/}
+        <button onClick={this.displayLocation}>Display My Location</button>
+        &nbsp;&nbsp;
         <button className ='btn btn-primary' id="refresh" style ={buttonStyle} 
         onClick={this.refreshMap}>Refresh the Map</button>
         {/*<label>

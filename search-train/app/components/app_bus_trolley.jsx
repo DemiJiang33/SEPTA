@@ -41,7 +41,7 @@ class AppBusTrolley extends React.Component{
 		return(
 			<div>
 			<Header />
-		    <Clock />
+		    <Clock title = "Bus/Trolley " />
 		    <hr/>
 
 		    <nav className="navbar navbar-inverse">

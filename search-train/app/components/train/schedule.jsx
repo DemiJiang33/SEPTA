@@ -14,7 +14,7 @@ class Schedule extends React.Component{
 	componentWillReceiveProps(nextProps){
 		var trainNo = nextProps.train.trainNo;
 
-		var url = "http://www3.septa.org/api/TrainView/schedule.php?train=" + trainNo;
+		var url = "https://www3.septa.org/api/TrainView/schedule.php?train=" + trainNo;
 
 		//get the detail of TrainView API data
 		fetchJsonp(url,{
