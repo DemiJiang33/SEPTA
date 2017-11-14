@@ -28,7 +28,7 @@ body {
 }
 
 #map{
-	padding-bottom: 35%;
+	padding-bottom: 40%;
 	border: 1px solid #dddddd;
 }
 
@@ -74,7 +74,7 @@ td br{
 
 @media screen and (max-width: 1024px){
 	#map{
-		padding-bottom: 50%;
+		padding-bottom: 55%;
 	}
 }
 
@@ -106,6 +106,9 @@ td br{
 }
 
 @media screen and (max-width: 425px){
+	#map{
+		padding-bottom: 100%;
+	}
 	p{
 		font-size: medium;
 	}
