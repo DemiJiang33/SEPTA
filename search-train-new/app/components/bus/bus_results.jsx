@@ -3,7 +3,6 @@ import React from "react";
 import Alert from './alert.jsx';
 import Advisory from './advisory.jsx';
 import Detours from './detours.jsx';
-import DetourTrolley from './detour_trolley.jsx';
 
 import advisoryIcon from '../../../images/advisory-icon.png';
 import alertIcon from '../../../images/alert-icon.png';
@@ -103,8 +102,7 @@ class BusResults extends React.Component{
 			<Alert route={this.props.route} bt={this.props.bt} alerts={this.props.alerts} />
 			</div>
 			<div id="detourDiv" style={detourStyle}>
-			{(displayDetour=='block') && (this.props.bt == "bus") && <Detours route={this.props.route} bt={this.props.bt} />}
-			{(this.props.bt == "trolley") && <DetourTrolley route={this.props.route} bt={this.props.bt} alerts={this.props.alerts} />}
+			<Detours route={this.props.route} bt={this.props.bt} />
 			</div>
 			<div id="advisoryDiv" style={advisoryStyle}>
 			<Advisory route={this.props.route} bt={this.props.bt} alerts={this.props.alerts} />

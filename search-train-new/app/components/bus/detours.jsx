@@ -46,13 +46,15 @@ class Detours extends React.Component{
 			bt = "Trolley";
 		}
 
+		var length = this.state.detours.length;
+
 		return(
 			<div>
 			<h4 className="well well-sm" style ={title}>
-			<img src={detourTopIcon} />  <strong>Detours for {bt} # {this.props.route}</strong></h4>
+			<img src={detourTopIcon} /> <strong>Detours for {bt} # {this.props.route} </strong></h4>
 			{this.state.detours.map(function(detour,i){
 				return(
-					<Detour detour={detour} key={i}/>
+					<Detour detour={detour} key={i} length={length} id={i} />
 					)
 			})}
 			</div>

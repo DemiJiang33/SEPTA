@@ -3,7 +3,16 @@ import React from "react";
 class Detour extends React.Component{
 
 	render(){
-	
+		var displayhr;
+		if(this.props.id == (this.props.length - 1 )){
+			displayhr = 'none'
+		}else{
+			displayhr = 'block'
+		}
+
+		const style={
+			display: displayhr
+		}
 
 		return(
 			<div ref="detour">
@@ -13,7 +22,8 @@ class Detour extends React.Component{
 			<p dangerouslySetInnerHTML={{__html: '<strong>'+ 'End Date: '+'</strong>'+ this.props.detour.end_date_time}} />
 			<p dangerouslySetInnerHTML={{__html: '<strong>'+ 'Reason for Detour: '+'</strong>'+ this.props.detour.reason}} />
 			<p dangerouslySetInnerHTML={{__html: '<strong>'+ 'Details: '+'</strong>'+ this.props.detour.current_message}} />
-			<hr/>
+			{/*<p> {this.props.id} </p>*/}
+			<hr style={style} />
 			</div>
 			);
 	}
