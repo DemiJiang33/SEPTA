@@ -13,7 +13,7 @@ class Alert extends React.Component{
 		return(
 			<div>
 			<h4 className="well well-sm" style ={title}>
-			<img src={alertTopIcon} />  <strong>Alert for Line # {this.props.train.line}</strong></h4>
+			<img src={alertTopIcon} />  <strong> Alert for Line # {this.props.train.line}</strong></h4>
 			<p dangerouslySetInnerHTML={{__html: this.props.train.alert}} />
 			</div>
 			);
