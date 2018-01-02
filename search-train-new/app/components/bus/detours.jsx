@@ -5,6 +5,8 @@ import Detour from './detour.jsx';
 
 import detourTopIcon from '../../../images/detour-top-icon.png';
 
+let mounted = true;
+
 class Detours extends React.Component{
 
 	constructor(props){
@@ -14,22 +16,38 @@ class Detours extends React.Component{
 		}
 	}
 
+	componentDidMount() {
+		mounted = true;
+	}
+
+	componentWillUnmount() {
+		mounted = false;
+	}
+
 	componentWillReceiveProps(nextProps){
 		var route = nextProps.route;
 		var url = "https://www3.septa.org/hackathon/BusDetours/?req1=" + route;
 
-		//get the detail of BusDetours API data
-		fetchJsonp(url)
-		.then(
-			response =>{
-				return response.json()
-			}).then(
-			json =>{
-				if(json.length != 0){
-					//console.log(json[0].route_info);
-					this.setState({detours: json[0].route_info});
-				}
-			});
+		//console.log(mounted);
+
+		if(!mounted){
+			return
+		}else{
+			//get the detail of BusDetours API data
+			fetchJsonp(url)
+			.then(
+				response =>{
+					return response.json()
+				}).then(
+				json =>{
+					if(json.length == 0){
+						return
+					}else{
+						//console.log(json[0].route_info);
+						this.setState({detours: json[0].route_info});
+					}
+				});
+			}	
 	}
 
 	render(){

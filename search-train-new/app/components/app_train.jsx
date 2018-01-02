@@ -38,7 +38,10 @@ class AppTrain extends React.Component{
 			return response.json()
 		}).then(
 		json =>{
-			this.setState({trains: json});
+			//console.log(json[0].error);
+			if(!json[0].error){
+				this.setState({trains: json});
+			}
 		});
 
 		//get the Alert API data
