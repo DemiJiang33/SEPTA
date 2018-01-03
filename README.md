@@ -1,7 +1,7 @@
 # SEPTA
 Regional Rail | Bus | Trolley <br/>
 Using React
-#Check the Demo here https://realtime.septa.org/
+#Check the Demo here https://realtime.septa.org/ or http://34.232.77.115/
 
 ### Getting Started
 There are two methods for getting started with this repo.
