@@ -32,7 +32,7 @@ class BusMap extends React.Component{
 		this.clearMarkers = this.clearMarkers.bind(this);
 		this.refreshMap = this.refreshMap.bind(this);
 		this.addYourLocationButton = this.addYourLocationButton.bind(this);
-		this.displayLocationOnce = this.displayLocationOnce.bind(this);
+		//this.displayLocationOnce = this.displayLocationOnce.bind(this);
 	};
 
 	componentWillReceiveProps(nextProps){
@@ -76,7 +76,7 @@ class BusMap extends React.Component{
 		];
 		map.setOptions({styles: noPoi});
 
-		this.displayLocationOnce(map, myMarker);
+		//this.displayLocationOnce(map, myMarker);
 
 		this.timeoutID1 = setTimeout(
 			() => google.maps.event.addDomListener(window, 'load', this.septaTransitView()),
@@ -102,7 +102,7 @@ class BusMap extends React.Component{
 		clearTimeout(this.septaTransitViewID);
 	}
 
-	displayLocationOnce(map, marker){
+	/*displayLocationOnce(map, marker){
 		var infoWindow = new google.maps.InfoWindow;
 		if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
@@ -130,7 +130,7 @@ class BusMap extends React.Component{
         		'Error: Your browser doesn\'t support geolocation.');
         	infoWindow.open(map);
         }
-	}
+	}*/
 
 	addYourLocationButton(map, marker) 
 	{
@@ -283,7 +283,8 @@ class BusMap extends React.Component{
 		}
 
 		var icon = {
-			url: iconUrl
+			url: iconUrl,
+			anchor: new google.maps.Point(20,23)
 		}
 		//icon end here
 
