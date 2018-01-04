@@ -15,7 +15,7 @@ class DefaultMap extends React.Component{
 			showMap: true
 		}
 		this.addYourLocationButton = this.addYourLocationButton.bind(this);
-		//this.displayLocationOnce = this.displayLocationOnce.bind(this);
+		this.displayLocationOnce = this.displayLocationOnce.bind(this);
 		this.onClickMove = this.onClickMove.bind(this);
 	}
 
@@ -46,11 +46,11 @@ class DefaultMap extends React.Component{
 
 		map.setOptions({styles: noPoi});
 
-		//this.displayLocationOnce(map, myMarker);
+		this.displayLocationOnce(map, myMarker);
 
 	}
 
-	/*displayLocationOnce(map, marker){
+	displayLocationOnce(map, marker){
 		var infoWindow = new google.maps.InfoWindow;
 		if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
@@ -78,7 +78,7 @@ class DefaultMap extends React.Component{
         		'Error: Your browser doesn\'t support geolocation.');
         	infoWindow.open(map);
         }
-	}*/
+	}
 
 	addYourLocationButton(map, marker) 
 	{

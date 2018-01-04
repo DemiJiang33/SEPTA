@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // between routes.
 const Header = () => (
   <header>
+    &nbsp;
     <Link to='/'>Home</Link>&nbsp;|&nbsp;
     <Link to='/regionalrail'>Regional Rail</Link>&nbsp;|&nbsp;
     <Link to='/bus_trolley'>Bus/Trolley</Link>

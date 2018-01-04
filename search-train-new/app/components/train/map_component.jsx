@@ -60,7 +60,7 @@ class MapComponent extends React.Component {
     this.clearMarkers = this.clearMarkers.bind(this);
     this.refreshMap = this.refreshMap.bind(this);
     this.addYourLocationButton = this.addYourLocationButton.bind(this);
-    //this.displayLocationOnce = this.displayLocationOnce.bind(this);
+    this.displayLocationOnce = this.displayLocationOnce.bind(this);
   };
 
   componentWillReceiveProps(nextProps){
@@ -107,7 +107,7 @@ class MapComponent extends React.Component {
     ];
     map.setOptions({styles: noPoi});
 
-    //this.displayLocationOnce(map, myMarker);
+    this.displayLocationOnce(map, myMarker);
 
     this.timeoutID1 = setTimeout(
       () => this.septaTrainView(),
@@ -133,7 +133,7 @@ class MapComponent extends React.Component {
     clearTimeout(this.refreshMapID);
   }
 
-  /*displayLocationOnce(map, marker){
+  displayLocationOnce(map, marker){
     var infoWindow = new google.maps.InfoWindow;
     if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
@@ -161,7 +161,7 @@ class MapComponent extends React.Component {
             'Error: Your browser doesn\'t support geolocation.');
           infoWindow.open(map);
         }
-  }*/
+  }
 
   addYourLocationButton(map, marker) 
   {

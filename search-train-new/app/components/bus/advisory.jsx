@@ -12,6 +12,12 @@ class Advisory extends React.Component{
 	}
 
 	componentWillReceiveProps(nextProps){
+		if (!String.prototype.contains) {
+			String.prototype.contains= function() {
+				return String.prototype.indexOf.apply(this, arguments) !== -1;
+			};
+		}
+
 		var alerts;
 		if(typeof nextProps.alerts != 'undefined' && nextProps.alerts){
 			alerts = nextProps.alerts;
@@ -25,7 +31,12 @@ class Advisory extends React.Component{
 		var anchors = $("a", $advisoryHTML);
 		for (var i= 0; i < anchors.length ; i++){
 			var oldHref = $(anchors[i]).attr("href");
-			var newHref = "https://www.septa.org/"+ oldHref;
+			//console.log(oldHref.contains("https:"));
+			if(oldHref.contains("http")){
+				var newHref = oldHref;
+			}else{
+				var newHref = "https://www.septa.org"+ oldHref;
+			}
 			//console.log(oldHref);
 			$(anchors[i]).attr("href", newHref);
 			//var value = $(anchors[i]).attr("href");
@@ -34,7 +45,7 @@ class Advisory extends React.Component{
 		var anchorsImg = $("img", $advisoryHTML);
 		for (var i= 0; i < anchorsImg.length ; i++){
 			var oldSrc = $(anchorsImg[i]).attr("src");
-			var newSrc = "https://www.septa.org/"+ oldSrc;
+			var newSrc = "https://www.septa.org"+ oldSrc;
 			//console.log(oldSrc);
 			$(anchorsImg[i]).attr("src", newSrc);
 			//var value2 = $(anchorsImg[i]).attr("src");

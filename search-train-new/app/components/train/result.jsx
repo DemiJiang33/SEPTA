@@ -128,7 +128,7 @@ class Result extends React.Component{
 			display: (this.state.hover)&&(window.innerWidth>768) ? 'block' : 'none',
 			border: '1px solid #aaaaaa',
 			backgroundColor: '#ffedcc',
-			left: '11%',
+			left: '7%',
 			position: 'absolute',
 			borderBottomLeftRadius: '1em'
 		}
