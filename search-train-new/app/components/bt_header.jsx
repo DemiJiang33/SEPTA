@@ -214,7 +214,7 @@ class BTHeader extends React.Component{
 		    <li ><Link to={`/bus_trolley/205`}>205</Link></li>
 		    <li ><Link to={`/bus_trolley/206`}>206</Link></li>
 		    <li ><Link to={`/bus_trolley/310`}>310</Link></li>
-		    <li ><Link to={`/bus_trolley/331`}>311</Link></li>
+		    <li ><Link to={`/bus_trolley/311`}>311</Link></li>
 		    <li ><Link to={`/bus_trolley/G`}>G</Link></li>
 		    <li ><Link to={`/bus_trolley/J`}>J</Link></li>
 		    <li ><Link to={`/bus_trolley/K`}>K</Link></li>

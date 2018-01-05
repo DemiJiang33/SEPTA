@@ -273,7 +273,7 @@ class BTHeader3 extends React.Component{
 		    <li ><Link to={`/bus_trolley/${firstLocation}/${secondLocation}/205`}>205</Link></li>
 		    <li ><Link to={`/bus_trolley/${firstLocation}/${secondLocation}/206`}>206</Link></li>
 		    <li ><Link to={`/bus_trolley/${firstLocation}/${secondLocation}/310`}>310</Link></li>
-		    <li ><Link to={`/bus_trolley/${firstLocation}/${secondLocation}/331`}>311</Link></li>
+		    <li ><Link to={`/bus_trolley/${firstLocation}/${secondLocation}/311`}>311</Link></li>
 		    <li ><Link to={`/bus_trolley/${firstLocation}/${secondLocation}/G`}>G</Link></li>
 		    <li ><Link to={`/bus_trolley/${firstLocation}/${secondLocation}/J`}>J</Link></li>
 		    <li ><Link to={`/bus_trolley/${firstLocation}/${secondLocation}/K`}>K</Link></li>
