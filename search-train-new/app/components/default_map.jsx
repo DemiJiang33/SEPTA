@@ -64,7 +64,7 @@ class DefaultMap extends React.Component{
             //infoWindow.open(map);
             map.setCenter(pos);
         },function(){
-        	handleLocationError(true, infoWindow, map.getCenter());
+        	//handleLocationError(true, infoWindow, map.getCenter());
           });
         } else {
           // Browser doesn't support Geolocation
