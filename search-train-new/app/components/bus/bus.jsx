@@ -71,9 +71,10 @@ class Bus extends React.Component{
 
 		//old API
 		//var url = "https://www3.septa.org/hackathon/TransitView/?route=" + route;
+		//var url = "http://apitest.septa.org/api/TransitViewAll/?routes=" + route +"," + route2 +"," + route3;
 
 		//new API
-		var url = "http://apitest.septa.org/api/TransitViewAll/?routes=" + route +"," + route2 +"," + route3;
+		var url = "http://www3.septa.org/api/TransitViewAll/?routes=" + route +"," + route2 +"," + route3;
 
 		//get the detail of TransitView API data
 		fetchJsonp(url)
