@@ -55,12 +55,7 @@ class MapComponent extends React.Component {
       trains: props.trains,
       //initiate state.trains
     }
-    this.septaTrainView = this.septaTrainView.bind(this);
-    this.initMap = this.initMap.bind(this);
-    this.clearMarkers = this.clearMarkers.bind(this);
     this.refreshMap = this.refreshMap.bind(this);
-    this.addYourLocationButton = this.addYourLocationButton.bind(this);
-    this.displayLocationOnce = this.displayLocationOnce.bind(this);
   };
 
   componentWillReceiveProps(nextProps){

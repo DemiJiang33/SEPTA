@@ -27,12 +27,7 @@ class BusMap extends React.Component{
 			route2: props.route2,
 			route3: props.route3
 		}
-		this.septaTransitView = this.septaTransitView.bind(this);
-		this.initMap = this.initMap.bind(this);
-		this.clearMarkers = this.clearMarkers.bind(this);
 		this.refreshMap = this.refreshMap.bind(this);
-		this.addYourLocationButton = this.addYourLocationButton.bind(this);
-		this.displayLocationOnce = this.displayLocationOnce.bind(this);
 	};
 
 	componentWillReceiveProps(nextProps){

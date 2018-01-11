@@ -14,8 +14,6 @@ class DefaultMap extends React.Component{
 		this.state = {
 			showMap: true
 		}
-		this.addYourLocationButton = this.addYourLocationButton.bind(this);
-		this.displayLocationOnce = this.displayLocationOnce.bind(this);
 		this.onClickMove = this.onClickMove.bind(this);
 	}
 

@@ -178,7 +178,7 @@ class Bus extends React.Component{
 			json =>{
 				//console.log(json);
 				this.setState({alerts: json[0]});
-			});
+			}).catch( error =>  console.log(error) );
 
 
 		var url3 = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt2+"_route_" + route2;
@@ -192,7 +192,7 @@ class Bus extends React.Component{
 			json =>{
 				//console.log(json);
 				this.setState({alerts2: json[0]});
-			});
+			}).catch( error =>  console.log(error) );
 
 
 		var url4 = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt3+"_route_" + route3;
@@ -206,7 +206,7 @@ class Bus extends React.Component{
 			json =>{
 				//console.log(json);
 				this.setState({alerts3: json[0]});
-			});
+			}).catch( error =>  console.log(error) );
 
 	}
 
