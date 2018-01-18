@@ -140,6 +140,11 @@ td br{
 }
 
 @media screen and (max-width: 320px){
+	@media screen and (max-height: 480px){
+		#map{
+			padding-bottom: 95%;
+		}
+	}
 	p{
 		font-size: small;
 	}

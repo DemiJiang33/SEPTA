@@ -32,8 +32,9 @@ class Advisory extends React.Component{
 		for (var i= 0; i < anchors.length ; i++){
 			var oldHref = $(anchors[i]).attr("href");
 			//console.log(oldHref.contains("https:"));
+			//console.log(oldHref);
 			if(oldHref.contains("http")){
-				var newHref = oldHref;
+				var newHref = oldHref.replace(/^http:\/\//i, 'https://');
 			}else{
 				var newHref = "https://www.septa.org"+ oldHref;
 			}
