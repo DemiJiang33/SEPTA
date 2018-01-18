@@ -77,8 +77,9 @@ class Bus extends React.Component{
 		var url = "http://www3.septa.org/api/TransitViewAll/?routes=" + route +"," + route2 +"," + route3;
 
 		//get the detail of TransitView API data
-		fetchJsonp(url)
-		.then(
+		fetchJsonp(url,{
+			timeout: 6000,
+		}).then(
 			response =>{
 				return response.json()
 			}).then(
@@ -170,8 +171,9 @@ class Bus extends React.Component{
 		var url2 = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt+"_route_" + route;
 
 		//get the detail of Alerts API data
-		fetchJsonp(url2)
-		.then(
+		fetchJsonp(url2,{
+			timeout: 6000,
+		}).then(
 			response =>{
 				return response.json()
 			}).then(
@@ -184,8 +186,9 @@ class Bus extends React.Component{
 		var url3 = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt2+"_route_" + route2;
 
 		//get the detail of Alerts API data
-		fetchJsonp(url3)
-		.then(
+		fetchJsonp(url3,{
+			timeout: 6000,
+		}).then(
 			response =>{
 				return response.json()
 			}).then(
@@ -198,8 +201,9 @@ class Bus extends React.Component{
 		var url4 = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt3+"_route_" + route3;
 
 		//get the detail of Alerts API data
-		fetchJsonp(url4)
-		.then(
+		fetchJsonp(url4,{
+			timeout: 6000,
+		}).then(
 			response =>{
 				return response.json()
 			}).then(
