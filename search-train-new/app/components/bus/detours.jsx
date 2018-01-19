@@ -34,8 +34,9 @@ class Detours extends React.Component{
 			return
 		}else{
 			//get the detail of BusDetours API data
-			fetchJsonp(url)
-			.then(
+			fetchJsonp(url,{
+				timeout: 6000,
+			}).then(
 				response =>{
 					return response.json()
 				}).then(
