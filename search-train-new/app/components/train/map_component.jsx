@@ -348,7 +348,7 @@ class MapComponent extends React.Component {
       }
       else
       {
-      if ( markerIcon.trainno % 2 ) // Even
+      if ( markerIcon.trainNo % 2 ) // Even
         icon = trainRed;
       else
         icon = trainBlue;

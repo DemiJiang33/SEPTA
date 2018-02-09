@@ -29,22 +29,33 @@ class SearchBar extends React.Component{
 
 	render(){
 		const style={
-			border: '1px solid',
-			marginBottom: '10px',
-			borderRadius: '5px',
-			width: '100%'
+			marginBottom: '10px'
+		}
+
+		const styleForm={
+			marginTop: '8px'
 		}
 
 		return(
 			<div className ="search-bar">
-			<button style={{float:'right'}} type="button" className ='btn btn-primary' 
+
+			<nav style={style} className="navbar navbar-inverse" >
+
+		    <form style={styleForm}>
+		    <div className="input-group">
+		    <input type="text" ref="form" className="form-control" onChange ={this.handleQuery.bind(this)} 
+			placeholder="Search for Train #, Line, Origin or Dest."/>
+		    <div className="input-group-btn">
+		    <button type="button" className ='btn btn-primary' 
 			onClick={this.onClickBind.bind(this)}>
 			<span className="glyphicon glyphicon-refresh"></span>
 			</button>
-			<div style={{overflow: 'hidden'}}>
-			<input style={style} id="search" onChange ={this.handleQuery.bind(this)} 
-			className="form-control" placeholder="Search for Train #, Line, Origin or Dest."/>
-			</div>
+		    </div>
+		    </div>
+		    </form>
+		
+		    </nav>
+
 			</div>
 			)
 	}

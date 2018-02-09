@@ -23,7 +23,8 @@ class Search extends React.Component{
 		return(
 			<div className = "search">
 			<SearchBar onQuery={this.handleQuery.bind(this)} />
-			<Results trains={this.props.trains} alertTrains={this.props.alertTrains} query={this.state.query} />
+			<Results trains={this.props.trains} alertTrains={this.props.alertTrains} 
+			query={this.state.query} error={this.props.error} />
 			</div>
 			)
 	}

@@ -12,7 +12,8 @@ class AppTrain extends React.Component{
 		super(props);
 		this.state ={
 			trains: [], //initiate state.trains
-			alertTrains: []
+			alertTrains: [],
+			error: ''
 		};
 	};
 
@@ -29,6 +30,8 @@ class AppTrain extends React.Component{
 	}
 
     //http://apitest.septa.org/beta/TrainView/    The old API
+
+    //https://apitest.septa.org/api/TrainView/badindex.php  TrainView - Kill Switch On
 	tick(){
 		//get the TrainView API data
 		fetchJsonp(`https://www3.septa.org/api/TrainView/index.php`,{
@@ -41,6 +44,8 @@ class AppTrain extends React.Component{
 			//console.log(json[0].error);
 			if(!json[0].error){
 				this.setState({trains: json});
+			}else{
+				this.setState({error: json[0].error});
 			}
 		});
 
@@ -64,7 +69,9 @@ class AppTrain extends React.Component{
 			<div className = "component">
 			<Header />
 		    <hr/>
-		    <Search trains={this.state.trains} alertTrains={this.state.alertTrains} />
+		    {this.state.error && <h3 style={{color: 'red'}}>{this.state.error}</h3>}
+		    <Search trains={this.state.trains} alertTrains={this.state.alertTrains} 
+		    error={this.state.error} />
 		    <SocialMedia />
 		    <ScrollUpButton />
 		    </div>

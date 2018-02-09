@@ -41,7 +41,8 @@ class Detours extends React.Component{
 					return response.json()
 				}).then(
 				json =>{
-					if(json.length == 0){
+					//console.log(json);
+					if(!json || json.length == 0){
 						return
 					}else{
 						//console.log(json[0].route_info);

@@ -144,6 +144,8 @@ class Results extends React.Component{
 			upOrDown = String.fromCharCode('9662') + "Show Map"
 		}
 
+		var error = this.props.error;
+
 		return(
 			<div>
 
@@ -175,7 +177,7 @@ class Results extends React.Component{
 			<div className ="result">
 			{this.state.compareTrains.map(function(train,i){
 				return(
-					<Result train={train} key={i}/>
+					<Result train={train} key={i} error={error} />
 					)
 			})}
 			</div>
