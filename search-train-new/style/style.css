@@ -19,6 +19,10 @@
     background-color: #337ab7;
 }
 
+.ScrollUpButton__Container{
+	margin-bottom: 15px;
+}
+
 ul .dropdown-menu{
     -webkit-columns: 2;
     -moz-columns: 2;
