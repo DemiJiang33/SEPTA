@@ -193,7 +193,7 @@ class AppBusTrolley extends React.Component{
 		    {!this.state.route && <DefaultMap />}
 
 			<SocialMedia />
-		    <ScrollUpButton />
+		    <ScrollUpButton ContainerClassName="ScrollUpButton__Container"/>
 		    </div>
 			);
 	}

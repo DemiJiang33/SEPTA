@@ -73,7 +73,7 @@ class AppTrain extends React.Component{
 		    <Search trains={this.state.trains} alertTrains={this.state.alertTrains} 
 		    error={this.state.error} />
 		    <SocialMedia />
-		    <ScrollUpButton />
+		    <ScrollUpButton ContainerClassName="ScrollUpButton__Container"/>
 		    </div>
 			)
 	}

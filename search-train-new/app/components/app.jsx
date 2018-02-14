@@ -34,7 +34,7 @@ class App extends React.Component{
 		    <br/>
 		    <br/>
 		    <SocialMedia />
-		    <ScrollUpButton />
+		    <ScrollUpButton ContainerClassName="ScrollUpButton__Container"/>
 		    </center>
 			)
 	}
