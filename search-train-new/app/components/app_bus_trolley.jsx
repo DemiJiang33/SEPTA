@@ -1,6 +1,6 @@
 import React from "react";
 import {withRouter} from "react-router-dom";
-
+import fetchJsonp from "fetch-jsonp";
 import ScrollUpButton from "react-scroll-up-button";
 
 //import Clock from './clock.jsx';
@@ -35,7 +35,8 @@ class AppBusTrolley extends React.Component{
 			route2: '',
 			route3: '',
 			found: false,
-			found2: false
+			found2: false,
+			genericAlert: ''
 		}
 	}
 
@@ -92,6 +93,7 @@ class AppBusTrolley extends React.Component{
 		}
 		//console.log(found);
 
+		this.tick();
 	}
 
 	componentWillReceiveProps(nextProps){
@@ -174,6 +176,25 @@ class AppBusTrolley extends React.Component{
 		clearTimeout(this.timerID);
 	}
 
+	tick(){
+
+		//get the Generic Alert data
+		fetchJsonp(`https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=generic`,{
+			timeout: 6000,
+		}).then(
+		response =>{
+			return response.json()
+		}).then(
+		json =>{
+			//console.log(json[0]);
+			if(json[0].current_message){
+				this.setState({genericAlert: json[0].current_message});
+			}else{
+				return null;
+			}
+		});
+	}
+
 
 	render(){
 
@@ -182,6 +203,8 @@ class AppBusTrolley extends React.Component{
 			<Header />
 		    {/*<Clock title = "Bus/Trolley " />*/}
 		    <hr/>
+
+		    {this.state.genericAlert && <h3 style={{color: 'red'}}>{this.state.genericAlert}</h3>}
 
 		    {!this.state.found && !this.state.found2 && <BTHeader />}
 		    {this.state.found && <BTHeader2 />}

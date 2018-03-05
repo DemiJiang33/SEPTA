@@ -13,7 +13,8 @@ class AppTrain extends React.Component{
 		this.state ={
 			trains: [], //initiate state.trains
 			alertTrains: [],
-			error: ''
+			error: '',
+			genericAlert: ''
 		};
 	};
 
@@ -33,6 +34,23 @@ class AppTrain extends React.Component{
 
     //https://apitest.septa.org/api/TrainView/badindex.php  TrainView - Kill Switch On
 	tick(){
+
+		//get the Generic Alert data
+		fetchJsonp(`https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=generic`,{
+			timeout: 6000,
+		}).then(
+		response =>{
+			return response.json()
+		}).then(
+		json =>{
+			//console.log(json[0]);
+			if(json[0].current_message){
+				this.setState({genericAlert: json[0].current_message});
+			}else{
+				return null;
+			}
+		});
+
 		//get the TrainView API data
 		fetchJsonp(`https://www3.septa.org/api/TrainView/index.php`,{
 			timeout: 6000,
@@ -69,6 +87,7 @@ class AppTrain extends React.Component{
 			<div className = "component">
 			<Header />
 		    <hr/>
+		    {this.state.genericAlert && <h3 style={{color: 'red'}}>{this.state.genericAlert}</h3>}
 		    {this.state.error && <h3 style={{color: 'red'}}>{this.state.error}</h3>}
 		    <Search trains={this.state.trains} alertTrains={this.state.alertTrains} 
 		    error={this.state.error} />
