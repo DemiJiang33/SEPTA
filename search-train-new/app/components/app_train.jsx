@@ -87,8 +87,8 @@ class AppTrain extends React.Component{
 			<div className = "component">
 			<Header />
 		    <hr/>
-		    {this.state.genericAlert && <h3 style={{color: 'red'}}>{this.state.genericAlert}</h3>}
-		    {this.state.error && <h3 style={{color: 'red'}}>{this.state.error}</h3>}
+		    {this.state.genericAlert && <p style={{color: 'red'}} dangerouslySetInnerHTML={{__html: this.state.genericAlert}} />}
+		    {this.state.error && <p style={{color: 'red'}}>{this.state.error}</p>}
 		    <Search trains={this.state.trains} alertTrains={this.state.alertTrains} 
 		    error={this.state.error} />
 		    <SocialMedia />

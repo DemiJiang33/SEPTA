@@ -204,7 +204,7 @@ class AppBusTrolley extends React.Component{
 		    {/*<Clock title = "Bus/Trolley " />*/}
 		    <hr/>
 
-		    {this.state.genericAlert && <h3 style={{color: 'red'}}>{this.state.genericAlert}</h3>}
+		    {this.state.genericAlert && <p style={{color: 'red'}} dangerouslySetInnerHTML={{__html: this.state.genericAlert}} />}
 
 		    {!this.state.found && !this.state.found2 && <BTHeader />}
 		    {this.state.found && <BTHeader2 />}
