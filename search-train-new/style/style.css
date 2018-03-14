@@ -23,15 +23,49 @@
 	margin-bottom: 15px;
 }
 
-ul .dropdown-menu{
+ul.dropdown-menu{
     -webkit-columns: 2;
     -moz-columns: 2;
     columns: 2;
 }
 
-ul .dropdown-menu li{
-    width: 50%;
+ul.route-status{
+    -webkit-columns: 4;
+    -moz-columns: 4;
+    columns: 4;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
+
+ul.line-status{
+    -webkit-columns: 4;
+    -moz-columns: 4;
+    columns: 4;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul.others-status{
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul.others2-status{
+    -webkit-columns: 1;
+    -moz-columns: 1;
+    columns: 1;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*ul .dropdown-menu li{
+    width: 50%;
+}*/
 
 body {
 	margin: 0;
@@ -73,7 +107,7 @@ h3{
 }
 
 input.form-control{
-	font-size: large
+	font-size: x-large
 }
 
 td,th{
@@ -103,11 +137,9 @@ td br{
 	#map{
 		padding-bottom: 75%;
 	}
-
 	input.form-control {
-		font-size: medium;
+		font-size: large;
 	}
-
 	td,th{
 		padding: 1px;
 	}
@@ -119,6 +151,25 @@ td br{
 	}
 	td#nextStopTd,th#nextStopTh{
 		width: 26%;
+	}
+	ul.route-status{
+		-webkit-columns: 2;
+		-moz-columns: 2;
+		columns: 2;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	ul.line-status{
+		-webkit-columns: 2;
+		-moz-columns: 2;
+		columns: 2;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	br.brHidden{
+		display: none;
 	}
 	
 }
@@ -137,9 +188,24 @@ td br{
 		font-size:medium;
 		font-weight: bold;
 	}
-
 	td,th{
 		font-size: medium;
+	}
+	ul.line-status{
+		-webkit-columns: 1;
+		-moz-columns: 1;
+		columns: 1;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	ul.others-status{
+		-webkit-columns: 1;
+		-moz-columns: 1;
+		columns: 1;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
 	}
 }
 
@@ -153,7 +219,7 @@ td br{
 		font-size: small;
 	}
 	input.form-control {
-		font-size: small;
+		font-size: medium;
 	}
 	.navbar-toggle {
     margin-bottom: 0px;

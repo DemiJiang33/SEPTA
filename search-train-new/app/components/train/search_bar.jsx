@@ -2,20 +2,14 @@ import React from "react";
 
 //This is the Search Bar
 class SearchBar extends React.Component{
-	/*constructor(props){
-		super(props);
-		this.state = {
-			show: false
-		}
+	constructor(props){
+		super(props);		
 	}
 
 	componentDidMount(){
-		if(window.innerWidth<768){
-			this.setState({show: false});
-		}else{
-			this.setState({show: true});
-		}
-	}*/
+		this.props.onQuery(this.props.line);
+		$("#changeInput").val(this.props.line);
+	}
 
 	handleQuery(event){
 		this.props.onQuery(event.target.value);
@@ -43,8 +37,8 @@ class SearchBar extends React.Component{
 
 		    <form style={styleForm}>
 		    <div className="input-group">
-		    <input type="text" ref="form" className="form-control" onChange ={this.handleQuery.bind(this)} 
-			placeholder="Search for Train #, Line, Origin or Dest."/>
+		    <input id="changeInput" type="text" ref="form" className="form-control" onChange ={this.handleQuery.bind(this)} 
+			placeholder="Search for Train # or Line Name"/>
 		    <div className="input-group-btn">
 		    <button type="button" className ='btn btn-primary' 
 			onClick={this.onClickBind.bind(this)}>

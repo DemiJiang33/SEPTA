@@ -1,41 +1,23 @@
 import React from "react";
 import fetchJsonp from "fetch-jsonp";
 import {Link} from 'react-router-dom';
+
 import advisoryIcon from '../../../images/advisory-icon.png';
 import alertIcon from '../../../images/alert-icon.png';
 import detourIcon from '../../../images/detour-icon.png';
 
-const array = [10,11,13,15,34,36,101,102];
-Array.prototype.contains = function(obj) {
-	var i = this.length;
-	while (i--) {
-		if (this[i] == obj) {
-			return true;
-		}
-	}
-	return false;
-}
-
-class RouteStatus extends React.Component{
+class OthersStatus extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			route: props.route,
+			line: props.line,
 			status: ''
 		}
 	}
 
 	componentDidMount(){
-		var bt;
-		var route = this.state.route;
-		if(array.contains(route)){
-			bt = "trolley";
-		}else{
-			bt = "bus";
-		}
-
-		var url = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt+"_route_" + route;
-
+		var line = this.state.line;
+		var url = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" + line;
 		//get the detail of Alert data
 		fetchJsonp(url,{
 			timeout: 6000,
@@ -48,8 +30,7 @@ class RouteStatus extends React.Component{
 			});
 	}
 
-	render(){
-
+render(){
 		if(!this.state.status){
 			return <li>Loading...</li>;
 		}
@@ -69,8 +50,8 @@ class RouteStatus extends React.Component{
 
 		return(
 			<li>
-			<Link to={'/bus_trolley/'+this.props.route}>
-			<span style = {{fontSize: 'large'}}>{this.props.route}</span>
+			<Link to={'/others/'+this.state.line}>
+			<span style = {{fontSize: 'large'}}>{this.state.status[0].route_name}</span>
 			<img style={styleAlert} src={alertIcon} />
 			<img style={styleDetour} src={detourIcon} /> 
 			<img style={styleAdvisory} src={advisoryIcon} /> 
@@ -82,4 +63,4 @@ class RouteStatus extends React.Component{
 	}
 }
 
-export default RouteStatus;
+export default OthersStatus;

@@ -14,7 +14,8 @@ class AppTrain extends React.Component{
 			trains: [], //initiate state.trains
 			alertTrains: [],
 			error: '',
-			genericAlert: ''
+			genericAlert: '',
+			line:''
 		};
 	};
 
@@ -24,6 +25,17 @@ class AppTrain extends React.Component{
 			() => this.tick(),
 			10000 // update every 10 second
 			);
+	}
+
+	componentWillMount(){
+		var pathname = this.props.location.pathname;
+		var pathExist = pathname.includes('regionalrail/');
+		if(pathExist){
+			var pathArray = this.props.location.pathname.split( 'regionalrail/' );
+			var line = pathArray[1];
+			this.setState({line: line});
+		}
+		//console.log(pathExist);
 	}
 
 	componentWillUnmount(){
@@ -83,6 +95,7 @@ class AppTrain extends React.Component{
 	}
 
 	render(){
+		//console.log(this.state.line);
 		return(
 			<div className = "component">
 			<Header />
@@ -90,7 +103,7 @@ class AppTrain extends React.Component{
 		    {this.state.genericAlert && <p style={{color: 'red'}} dangerouslySetInnerHTML={{__html: this.state.genericAlert}} />}
 		    {this.state.error && <p style={{color: 'red'}}>{this.state.error}</p>}
 		    <Search trains={this.state.trains} alertTrains={this.state.alertTrains} 
-		    error={this.state.error} />
+		    error={this.state.error} line={this.state.line} />
 		    <SocialMedia />
 		    <ScrollUpButton ContainerClassName="ScrollUpButton__Container"/>
 		    </div>

@@ -22,7 +22,7 @@ class Search extends React.Component{
 	render(){
 		return(
 			<div className = "search">
-			<SearchBar onQuery={this.handleQuery.bind(this)} />
+			<SearchBar onQuery={this.handleQuery.bind(this)} line={this.props.line} />
 			<Results trains={this.props.trains} alertTrains={this.props.alertTrains} 
 			query={this.state.query} error={this.props.error} />
 			</div>

@@ -4,7 +4,8 @@ import {Route, Switch} from 'react-router-dom';
 import AppTrain from './app_train.jsx';
 import AppBusTrolley from './app_bus_trolley.jsx';
 import App from './app.jsx';
-import SystemStatus from './systemStatus/system_status.jsx'
+import SystemStatus from './systemStatus/system_status.jsx';
+import OthersIndex from './others/others_index.jsx';
 
 const Routes = () => (
 	<Switch>
@@ -14,6 +15,7 @@ const Routes = () => (
 	  <Route path='/bus_trolley' component={AppBusTrolley} />
 	  <Route path = "/regionalrail" component={AppTrain} />
 	  <Route path = "/systemstatus" component={SystemStatus} />
+	  <Route path = "/others" component={OthersIndex} />
 	  <Route path = "/" component={App} />
 	</Switch>
 	)

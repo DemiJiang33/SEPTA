@@ -1,44 +1,76 @@
 import React from "react";
-import RouteStatus from './route_status.jsx'
+import fetchJsonp from "fetch-jsonp";
+import ScrollUpButton from "react-scroll-up-button";
+
+import SocialMedia from '../social_media.jsx';
+import Header from '../header.jsx';
+import BusRoutes from './busRoutes.jsx'
+import RegionalRail from './regionalRail.jsx'
+import Others from './others.jsx'
+
+import advisoryTopIcon from '../../../images/advisory-top-icon.png';
+import alertTopIcon from '../../../images/alert-top-icon.png';
+import detourTopIcon from '../../../images/detour-top-icon.png';
 
 class SystemStatus extends React.Component{
 	constructor(props){
 		super(props);
+		this.state ={
+			genericAlert: ''
+		};
 	}
+
+	componentDidMount(){
+		//get the Generic Alert data
+		fetchJsonp(`https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=generic`,{
+			timeout: 6000,
+		}).then(
+		response =>{
+			return response.json()
+		}).then(
+		json =>{
+			//console.log(json[0]);
+			if(json[0].current_message){
+				this.setState({genericAlert: json[0].current_message});
+			}else{
+				return null;
+			}
+		});
+	}
+
 	render(){
+
 		return(
-			<div className="menu1">
-			<RouteStatus route = "1" />
-			<RouteStatus route = "2" />
-			<RouteStatus route = "3" />
-			<RouteStatus route = "4" />
-			<RouteStatus route = "5" />
-			<RouteStatus route = "6" />
-			<RouteStatus route = "7" />
-			<RouteStatus route = "8" />
-			<RouteStatus route = "9" />
-			<RouteStatus route = "12" />
-			<RouteStatus route = "14" />
-			<RouteStatus route = "16" />
-			<RouteStatus route = "17" />
-			<RouteStatus route = "18" />
-			<RouteStatus route = "19" />
-			<RouteStatus route = "20" />
-			<RouteStatus route = "21" />
-			<RouteStatus route = "22" />
-			<RouteStatus route = "23" />
-			<RouteStatus route = "24" />
-			<RouteStatus route = "25" />
-			<RouteStatus route = "26" />
-			<RouteStatus route = "27" />
-			<RouteStatus route = "28" />
-			<RouteStatus route = "29" />
-			<RouteStatus route = "30" />
-			<RouteStatus route = "31" />
-			<RouteStatus route = "32" />
-			<RouteStatus route = "33" />
-			<RouteStatus route = "35" />	
-			<hr/>
+			<div>
+
+			<Header />
+		    <hr/>
+
+			<div style={{float: 'left', width: '300px'}}>
+			<div style={{float: 'left', width: '55px'}}>
+			<img alt="Service Alert" title="Service Alert" src={alertTopIcon} />
+			<p style={{font: 'bold 10px helvetica'}}>Service Alert</p>
+			</div>
+			<div style={{float: 'left', width: '55px'}}>
+			<img alt="Detour" title="Detour" src={detourTopIcon} />
+			<p style={{font: 'bold 10px helvetica'}}>Detour</p>
+			</div>
+			<div style={{float: 'left', width: '55px'}}>
+			<img alt="Service Advisory" title="Service Advisory" src={advisoryTopIcon} />
+			<p style={{font: 'bold 10px helvetica'}}>Service Advisory</p>
+			</div>
+			</div>
+
+			<div style={{clear: 'both'}}>
+			{this.state.genericAlert && <p style={{color: 'red'}} dangerouslySetInnerHTML={{__html: this.state.genericAlert}} />}
+			<BusRoutes />
+			<RegionalRail />
+			<Others />
+			</div>
+
+			<SocialMedia />
+		    <ScrollUpButton ContainerClassName="ScrollUpButton__Container"/>
+
 			</div>
 			)
 	}

@@ -20,9 +20,7 @@ class Results extends React.Component{
 	componentWillReceiveProps(nextProps){
 		var foundTrains = nextProps.trains.filter(train =>{
 			return train.trainno.toLowerCase().match(nextProps.query.toLowerCase()) ||
-			train.line.toLowerCase().match(nextProps.query.toLowerCase()) ||
-			train.SOURCE.toLowerCase().match(nextProps.query.toLowerCase()) ||
-			train.dest.toLowerCase().match(nextProps.query.toLowerCase());
+			train.line.toLowerCase().match(nextProps.query.toLowerCase());
 		});
 
 		foundTrains.sort(natSort);
