@@ -46,10 +46,9 @@ class Result extends React.Component{
 	}
 
 	render(){
-		if(!this.props.train && !this.props.error){
+		//console.log(typeof this.props.train);
+		if((typeof this.props.train == 'undefined') && (!this.props.error)){
 			return <div>Loading...</div>;
-		}else if(this.props.error){
-			return null;
 		}
 
 		const styleCursor = {

@@ -1,12 +1,15 @@
 import React from "react";
+import {withRouter} from "react-router-dom";
 
 //This is the Search Bar
 class SearchBar extends React.Component{
 	constructor(props){
-		super(props);		
+		super(props);
+		this.handleKeyPress = this.handleKeyPress.bind(this);		
 	}
 
 	componentDidMount(){
+		//console.log(this.props.line);
 		this.props.onQuery(this.props.line);
 		$("#changeInput").val(this.props.line);
 	}
@@ -19,6 +22,13 @@ class SearchBar extends React.Component{
 	onClickBind(){
 		//Bind this click with #refresh
 		$("#refresh").click();
+	}
+
+	handleKeyPress(e) {
+		this.props.history.push(`/regionalrail/${e.target.value}`);
+		if (e.which === 40 || e.which === 91 || e.which === 92) { // '(' or '[' or '\'
+			e.preventDefault();
+	    }
 	}
 
 	render(){
@@ -38,7 +48,7 @@ class SearchBar extends React.Component{
 		    <form style={styleForm}>
 		    <div className="input-group">
 		    <input id="changeInput" type="text" ref="form" className="form-control" onChange ={this.handleQuery.bind(this)} 
-			placeholder="Search for Train # or Line Name"/>
+		    onKeyPress={this.handleKeyPress} placeholder="Search for Train # or Line Name"/>
 		    <div className="input-group-btn">
 		    <button type="button" className ='btn btn-primary' 
 			onClick={this.onClickBind.bind(this)}>
@@ -55,4 +65,4 @@ class SearchBar extends React.Component{
 	}
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);
