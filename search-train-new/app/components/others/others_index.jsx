@@ -5,7 +5,7 @@ import fetchJsonp from "fetch-jsonp";
 import SocialMedia from '../social_media.jsx';
 import Header from '../header.jsx';
 
-import OthersDetail from './others_detail.jsx'
+import OthersDetail from './others_detail.jsx';
 
 class OthersIndex extends React.Component{
 	constructor(props){
@@ -65,7 +65,7 @@ class OthersIndex extends React.Component{
 		    <hr/>
 
 		    {!this.state.hasLine && <p style={{color: 'red'}}>There are no current Alerts, Detours or Service Advisories.</p>}
-		    {this.state.hasLine && <OthersDetail line={this.state.line} status={this.state.status}/>}
+		    {this.state.hasLine && <OthersDetail line={this.state.line} status={this.state.status} />}
 
 		    <SocialMedia />
 		    <ScrollUpButton ContainerClassName="ScrollUpButton__Container"/>

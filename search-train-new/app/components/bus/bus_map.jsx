@@ -3,7 +3,7 @@ import React from "react";
 import bluedot from '../../../images/bluedot.png';
 
 var mapMarkersArray = []; //makes an array of the markers you place on the map,
-                          //it is ussd in clearMarkers().
+                          //it is used in clearMarkers().
 var map;
 var ctaLayer;
 var ctaLayer2;

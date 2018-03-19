@@ -1,6 +1,7 @@
 import React from "react";
 
-import OthersAdvisory from './others_advisory.jsx'
+import OthersAdvisory from './others_advisory.jsx';
+import OthersMap from './others_map.jsx'
 
 import advisoryIcon from '../../../images/advisory-icon.png';
 import alertIcon from '../../../images/alert-icon.png';
@@ -13,8 +14,6 @@ import detourTopIcon from '../../../images/detour-top-icon.png';
 class OthersDetail extends React.Component{
 	constructor(props){
 		super(props);
-		this.state ={
-		};
 	}
 
 	render(){
@@ -75,6 +74,9 @@ class OthersDetail extends React.Component{
 		}
 
 		return(
+			<div>
+			<OthersMap line = {this.props.line} />
+
 			<div style={divStyle}>
 
             <h4 className="well well-sm" style ={title}>
@@ -111,6 +113,8 @@ class OthersDetail extends React.Component{
 			<img src={advisoryTopIcon} /><strong> Advisory for line # {this.props.status.route_name}</strong>
 			</h4>
 			<OthersAdvisory advisory={this.props.status.advisory_message} />
+			</div>
+
 			</div>
 
 			</div>
