@@ -77,14 +77,14 @@ class AppBusTrolley extends React.Component{
 		});
 
 		var pathname = this.props.location.pathname;
-		var regex = /^\/bus_trolley\/(\d+|[A-Z]+)(|\/)$/g;
+		var regex = /^\/bus_trolley\/(\d+|[A-Z]+|\d+[A-Z])(|\/)$/g;
 		var found = regex.test(pathname);
 		if (found){
 			this.setState({found: found});
 		}else{
 			this.setState({found: found});
 		}
-		var regex2 = /^\/bus_trolley(\/(\d+|[A-Z]+)){2,}(|\/)$/g;
+		var regex2 = /^\/bus_trolley(\/(\d+|[A-Z]+|\d+[A-Z])){2,}(|\/)$/g;
 		var found2 = regex2.test(pathname);
 		if (found2){
 			this.setState({found2: found2});
@@ -143,14 +143,14 @@ class AppBusTrolley extends React.Component{
 		});
 
 		var pathname = nextProps.location.pathname;
-		var regex = /^\/bus_trolley\/(\d+|[A-Z]+)(|\/)$/g;
+		var regex = /^\/bus_trolley\/(\d+|[A-Z]+|\d+[A-Z])(|\/)$/g;
 		var found = regex.test(pathname);
 		if (found){
 			this.setState({found: found});
 		}else{
 			this.setState({found: found});
 		}
-		var regex2 = /^\/bus_trolley(\/(\d+|[A-Z]+)){2,}(|\/)$/g;
+		var regex2 = /^\/bus_trolley(\/(\d+|[A-Z]+|\d+[A-Z])){2,}(|\/)$/g;
 		var found2 = regex2.test(pathname);
 		if (found2){
 			this.setState({found2: found2});

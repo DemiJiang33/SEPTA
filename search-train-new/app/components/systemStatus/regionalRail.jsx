@@ -8,10 +8,8 @@ class RegionalRail extends React.Component{
 	constructor(props){
 		super(props);
 		this.state ={
-			showRR: true,
 			statusLines: []
 		};
-		this.onClickRR = this.onClickRR.bind(this);
 	}
 
 	componentDidMount(){
@@ -28,54 +26,30 @@ class RegionalRail extends React.Component{
 			});
 	}
 
-	onClickRR(){
-		this.setState({showRR: !this.state.showRR});
-	}
-
 	render(){
 		if(!this.state.statusLines){
 			<div>Loading...</div>
 		}
 
-		var RRUpOrDown;
-		if(this.state.showRR){
-			RRUpOrDown = String.fromCharCode('9652') + "Hide Regional Rail"
-		}else{
-			RRUpOrDown = String.fromCharCode('9662') + "Show Regional Rail"
-		}
-
-		const RRStyle={
-			display: this.state.showRR ? 'block' : 'none'
-		}
-
 		return(
 			<div>
 
-			<div>
 			<center>
 			<h3><img src={RRStatus} />&nbsp;&nbsp;Regional Rail Lines</h3>
-			</center>
-			<button onClick={this.onClickRR}
-			className ='btn btn-primary btn-md btn-block'>{RRUpOrDown}</button>
-			</div>
-
-			<div style={RRStyle}>
-			<div >
-			<center>
+			<hr/>
 			<h3>A-W</h3>
 			</center>
-			</div>
+
 			<ul className="line-status">
 			{this.state.statusLines.map(function(statusLine,i){
 				return(
 					<LineStatus statusLine={statusLine} key={i} />
 					)
 			})}
-			<br className="brHidden"/>
-			<br className="brHidden"/>
+			<br className="brHiddenRR"/>
+			<br className="brHiddenRR"/>
 			</ul>
 			<br/>
-			</div>
 
 			</div>
 			)

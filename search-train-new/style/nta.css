@@ -1,0 +1,21 @@
+p.pStyle{
+	overflow: hidden;
+	text-align: center;
+}
+p.pStyle::before,p.pStyle::after{
+	background-color: red;
+	content: "";
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	width: 50%;
+	border-top: 3px double #8c8b8b;
+}
+p.pStyle::before{
+	right: 0.5em;
+	margin-left: -50%;
+}
+p.pStyle::after{
+	left: 0.5em;
+	margin-right: -50%;
+}

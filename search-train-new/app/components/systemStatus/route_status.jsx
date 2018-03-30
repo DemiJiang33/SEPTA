@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import advisoryIcon from '../../../images/advisory-icon.png';
 import alertIcon from '../../../images/alert-icon.png';
 import detourIcon from '../../../images/detour-icon.png';
+import pinIcon from '../../../images/pin-icon.png';
 
 const array = [10,11,13,15,34,36,101,102];
 Array.prototype.contains = function(obj) {
@@ -34,7 +35,16 @@ class RouteStatus extends React.Component{
 			bt = "bus";
 		}
 
-		var url = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt+"_route_" + route;
+		var routeN;
+		if (route == '15B'){
+			routeN = '15b';
+		}else if (route == '36B'){
+			routeN = '36b';
+		}else{
+			routeN = route;
+		}
+
+		var url = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt+"_route_" + routeN;
 
 		//get the detail of Alert data
 		fetchJsonp(url,{
@@ -74,6 +84,7 @@ class RouteStatus extends React.Component{
 			<img style={styleAlert} src={alertIcon} />
 			<img style={styleDetour} src={detourIcon} /> 
 			<img style={styleAdvisory} src={advisoryIcon} /> 
+			<img src={pinIcon} /> 
 			</Link>
 			<hr/>
 			</li>

@@ -6,6 +6,7 @@ import AppBusTrolley from './app_bus_trolley.jsx';
 import App from './app.jsx';
 import SystemStatus from './systemStatus/system_status.jsx';
 import OthersIndex from './others/others_index.jsx';
+import NTAIndex from './nta/nta_index.jsx';
 
 const Routes = () => (
 	<Switch>
@@ -16,6 +17,7 @@ const Routes = () => (
 	  <Route path = "/regionalrail" component={AppTrain} />
 	  <Route path = "/systemstatus" component={SystemStatus} />
 	  <Route path = "/others" component={OthersIndex} />
+	  <Route path = "/nta" component={NTAIndex} />
 	  <Route path = "/" component={App} />
 	</Switch>
 	)

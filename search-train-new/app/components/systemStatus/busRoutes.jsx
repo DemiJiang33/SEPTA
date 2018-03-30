@@ -7,57 +7,18 @@ import trolleyStatus from '../../../images/trolley-status.png';
 class BusRoutes extends React.Component{
 	constructor(props){
 		super(props);
-		this.state ={
-			showBus: true,
-			showTrolley: true
-		};
-		this.onClickBus = this.onClickBus.bind(this);
-		this.onClickTrolley = this.onClickTrolley.bind(this);
-	}
-
-	onClickBus(){
-		this.setState({showBus: !this.state.showBus});
-	}
-	onClickTrolley(){
-		this.setState({showTrolley: !this.state.showTrolley});
 	}
 
 	render(){
-		var busUpOrDown;
-		if(this.state.showBus){
-			busUpOrDown = String.fromCharCode('9652') + "Hide Bus"
-		}else{
-			busUpOrDown = String.fromCharCode('9662') + "Show Bus"
-		}
-
-		var trolleyUpOrDown;
-		if(this.state.showTrolley){
-			trolleyUpOrDown = String.fromCharCode('9652') + "Hide Trolley"
-		}else{
-			trolleyUpOrDown = String.fromCharCode('9662') + "Show Trolley"
-		}
-
-		const busStyle={
-			display: this.state.showBus ? 'block' : 'none'
-		}
-		const trolleyStyle={
-			display: this.state.showTrolley ? 'block' : 'none'
-		}
 
 		return(
 			<div>
 
-			<div>
-			<center>
-			<h3><img src={busStatus} />&nbsp;&nbsp;Bus Routes</h3>
-			</center>
-			<button onClick={this.onClickBus}
-			className ='btn btn-primary btn-md btn-block'>{busUpOrDown}</button>
-			</div>
-
-			<div style={busStyle}>
+			{this.props.showBus && <div>
 			<div >
 			<center>
+			<h3><img src={busStatus} />&nbsp;&nbsp;Bus Routes</h3>
+			<hr/>
 			<h3>1-35</h3>
 			</center>
 			</div>
@@ -73,6 +34,7 @@ class BusRoutes extends React.Component{
 			<RouteStatus route = "9" />
 			<RouteStatus route = "12" />
 			<RouteStatus route = "14" />
+			<RouteStatus route = "15B" />
 			<RouteStatus route = "16" />
 			<RouteStatus route = "17" />
 			<RouteStatus route = "18" />
@@ -92,8 +54,7 @@ class BusRoutes extends React.Component{
 			<RouteStatus route = "32" />
 			<RouteStatus route = "33" />
 			<RouteStatus route = "35" />
-			<br className="brHidden"/>
-			<br className="brHidden"/>
+			<RouteStatus route = "36B" />
 			</ul>
 			<br/>
 			<div >
@@ -216,19 +177,13 @@ class BusRoutes extends React.Component{
 			<RouteStatus route = "BLVDDIR" />
 			</ul>
 			<br/>
-			</div>
+			</div>}
 
-			<div>
-			<center>
-			<h3><img src={trolleyStatus} />&nbsp;&nbsp;Trolley Lines</h3>
-			</center>
-			<button onClick={this.onClickTrolley}
-			className ='btn btn-primary btn-md btn-block'>{trolleyUpOrDown}</button>
-			</div>
-
-			<div style={trolleyStyle}>
+			{this.props.showTrolley && <div>
 			<div >
 			<center>
+			<h3><img src={trolleyStatus} />&nbsp;&nbsp;Trolley Lines</h3>
+			<hr/>
 			<h3>10-102</h3>
 			</center>
 			</div>
@@ -243,7 +198,7 @@ class BusRoutes extends React.Component{
 			<RouteStatus route = "102" />
 			</ul>
 			<br/>
-			</div>
+			</div>}
 
 			</div>
 			)

@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import advisoryIcon from '../../../images/advisory-icon.png';
 import alertIcon from '../../../images/alert-icon.png';
 import detourIcon from '../../../images/detour-icon.png';
+import pinIcon from '../../../images/pin-icon.png';
 
 class LineStatus extends React.Component{
 	constructor(props){
@@ -35,6 +36,7 @@ class LineStatus extends React.Component{
 			<img style={styleAlert} src={alertIcon} />
 			<img style={styleDetour} src={detourIcon} /> 
 			<img style={styleAdvisory} src={advisoryIcon} /> 
+			<img src={pinIcon} />
 			</Link>
 			<hr/>
 			</li>

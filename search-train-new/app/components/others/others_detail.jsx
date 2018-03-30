@@ -80,7 +80,7 @@ class OthersDetail extends React.Component{
 			<div style={divStyle}>
 
             <h4 className="well well-sm" style ={title}>
-            <strong>Line {this.props.status.route_name}&nbsp;</strong>
+            <strong>{this.props.status.route_name}&nbsp;</strong>
             {(displayAlert=='block') && <a>
 			<img src={alertIcon} />
 			</a>}
