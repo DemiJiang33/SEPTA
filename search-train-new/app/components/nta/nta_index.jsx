@@ -11,6 +11,8 @@ import fromArrow from '../../../images/fromArrow.gif';
 import toArrow from '../../../images/toArrow.gif';
 import nearMe from '../../../images/nearMe.png';
 
+import DATA from '../../../data/stationPosition.json';
+
 class NTAIndex extends React.Component{
 	constructor(props){
 		super(props);
@@ -57,6 +59,40 @@ class NTAIndex extends React.Component{
 	}
 
 	onClickNearMe(){
+		function distance(lat1, lon1, lat2, lon2) {
+			var deltaX = diff(lat1, lat2);
+			var deltaY = diff(lon1, lon2);
+			var dist = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
+			return (dist);
+		}
+
+		function diff (num1, num2) {
+			if (num1 > num2) {
+				return (num1 - num2);
+			} else {
+				return (num2 - num1);
+			}
+		};
+
+		var minDist = 1;
+		var nearest_text = '*None*';
+
+		navigator.geolocation.getCurrentPosition(function(location) {
+			var latitude = location.coords.latitude;
+			var longitude = location.coords.longitude;
+			for (var i = 0 ; i < DATA.length ; i++){
+				var lat = DATA[i].position.split(',')[0];
+				var lon = DATA[i].position.split(',')[1];
+				var markerDist = distance(latitude, longitude, lat, lon);
+				//console.log(markerDist);
+				//console.log(DATA[i].station);
+				if(markerDist < minDist){
+					minDist = markerDist;
+					nearest_text = DATA[i].station;
+				}
+			}
+			alert('The nearest station is : ' + nearest_text);
+		});
 		
 	}
 

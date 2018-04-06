@@ -22,7 +22,7 @@ class DefaultMap extends React.Component{
 		center: DEFAULT_POSITION,
 		zoom: 10,
 		mapTypeControl: false,
-		gestureHandling: 'greedy'
+		gestureHandling: 'cooperative'
 	});
 
 		var myMarker = new google.maps.Marker({

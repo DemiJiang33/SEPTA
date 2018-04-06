@@ -1,0 +1,638 @@
+[
+  {
+    "station": "9th St",
+    "position": "40.25010,-75.27914"
+  },
+  {
+    "station": "30th Street Station",
+    "position": "39.95694,-75.18373"
+  },
+  {
+    "station": "49th St",
+    "position": "39.94328,-75.21604"
+  },
+  {
+    "station": "Airport Terminal A",
+    "position": "39.87611,-75.2453"
+  },
+  {
+    "station": "Airport Terminal B",
+    "position": "39.87722,-75.2414"
+  },
+  {
+    "station": "Airport Terminal C-D",
+    "position": "39.87806,-75.24"
+  },
+  {
+    "station": "Airport Terminal E-F",
+    "position": "39.87799,-75.24105"
+  },
+  {
+    "station": "Allegheny",
+    "position": "40.00386,-75.16617"
+  },
+  {
+    "station": "Allen Lane",
+    "position": "40.05790,-75.19568"
+  },
+  {
+    "station": "Ambler",
+    "position": "40.15330,-75.22512"
+  },
+  {
+    "station": "Angora",
+    "position": "39.94452,-75.23909"
+  },
+  {
+    "station": "Ardmore",
+    "position": "40.00855,-75.29100"
+  },
+  {
+    "station": "Ardsley",
+    "position": "40.11362,-75.15372"
+  },
+  {
+    "station": "Bala",
+    "position": "40.00060,-75.22785"
+  },
+  {
+    "station": "Berwyn",
+    "position": "40.04778,-75.44309"
+  },
+  {
+    "station": "Bethayres",
+    "position": "40.11640,-75.06800"
+  },
+  {
+    "station": "Bridesburg",
+    "position": "40.01068,-75.06979"
+  },
+  {
+    "station": "Bristol",
+    "position": "40.10381,-74.85092"
+  },
+  {
+    "station": "Bryn Mawr",
+    "position": "40.02158,-75.31578"
+  },
+  {
+    "station": "Carpenter",
+    "position": "40.05032,-75.19187"
+  },
+  {
+    "station": "Chalfont",
+    "position": "40.28750,-75.20940"
+  },
+  {
+    "station": "Chelten Avenue",
+    "position": "40.0553,-75.0964"
+  },
+  {
+    "station": "Cheltenham",
+    "position": "40.05707,-75.09360"
+  },
+  {
+    "station": "Chester TC",
+    "position": "39.84893,-75.36160"
+  },
+  {
+    "station": "Chestnut Hill East",
+    "position": "40.08120,-75.20800"
+  },
+  {
+    "station": "Chestnut Hill West",
+    "position": "40.07645,-75.20771"
+  },
+  {
+    "station": "Churchmans Crossing",
+    "position": "39.69500,-75.67300"
+  },
+  {
+    "station": "Claymont",
+    "position": "39.79994,-75.45059"
+  },
+  {
+    "station": "Clearfield",
+    "position": "40.000216,-75.15873"
+  },
+  {
+    "station": "Clifton-Aldan",
+    "position": "39.92604,-75.29107"
+  },
+  {
+    "station": "Colmar",
+    "position": "40.26779,-75.25519"
+  },
+  {
+    "station": "Conshohocken",
+    "position": "40.07137,-75.30747"
+  },
+  {
+    "station": "Cornwells Heights",
+    "position": "40.07195,-74.95173"
+  },
+  {
+    "station": "Crestmont",
+    "position": "40.13380,-75.11876"
+  },
+  {
+    "station": "Croydon",
+    "position": "40.09340,-74.90720"
+  },
+  {
+    "station": "Crum Lynne",
+    "position": "39.87122,-75.33168"
+  },
+  {
+    "station": "Curtis Park",
+    "position": "39.90706,-75.26636"
+  },
+  {
+    "station": "Cynwyd",
+    "position": "40.00653,-75.23225"
+  },
+  {
+    "station": "Daylesford",
+    "position": "40.04305,-75.46055"
+  },
+  {
+    "station": "Darby",
+    "position": "39.91270,-75.25526"
+  },
+  {
+    "station": "Del Val College",
+    "position": "40.29502,-75.15555"
+  },
+  {
+    "station": "Devon",
+    "position": "40.04722,-75.42277"
+  },
+  {
+    "station": "Downingtown",
+    "position": "40.00222,-75.71027"
+  },
+  {
+    "station": "Doylestown",
+    "position": "40.30580,-75.13080"
+  },
+  {
+    "station": "East Falls",
+    "position": "40.01151,-75.19327"
+  },
+  {
+    "station": "Eastwick Station",
+    "position": "39.89278,-75.24421"
+  },
+  {
+    "station": "Eddington",
+    "position": "40.08280,-74.93416"
+  },
+  {
+    "station": "Eddystone",
+    "position": "39.85634,-75.34364"
+  },
+  {
+    "station": "Elkins Park",
+    "position": "40.07205,-75.12829"
+  },
+  {
+    "station": "Elm St",
+    "position": "40.1208,-75.345"
+  },
+  {
+    "station": "Elwyn Station",
+    "position": "39.90580,-75.41458"
+  },
+  {
+    "station": "Exton",
+    "position": "40.01914,-75.62308"
+  },
+  {
+    "station": "Fellwick",
+    "position": "40.13581,-75.21294"
+  },
+  {
+    "station": "Fern Rock TC",
+    "position": "40.04159,-75.13498"
+  },
+  {
+    "station": "Fernwood",
+    "position": "39.93939,-75.25694"
+  },
+  {
+    "station": "Folcroft",
+    "position": "39.90135,-75.27786"
+  },
+  {
+    "station": "Forest Hills",
+    "position": "40.12732,-75.02254"
+  },
+  {
+    "station": "Ft Washington",
+    "position": "40.13581,-75.21294"
+  },
+  {
+    "station": "Fortuna",
+    "position": "40.25951,-75.26675"
+  },
+  {
+    "station": "Fox Chase",
+    "position": "40.07666,-75.08359"
+  },
+  {
+    "station": "Germantown",
+    "position": "40.03905,-75.17243"
+  },
+  {
+    "station": "Gladstone",
+    "position": "39.93172,-75.28340"
+  },
+  {
+    "station": "Glenolden",
+    "position": "39.89624,-75.29005"
+  },
+  {
+    "station": "Glenside",
+    "position": "40.10111,-75.15343"
+  },
+  {
+    "station": "Gravers",
+    "position": "40.07766,-75.20257"
+  },
+  {
+    "station": "Gwynedd Valley",
+    "position": "40.18435,-75.25710"
+  },
+  {
+    "station": "Hatboro",
+    "position": "40.17446,-75.10336"
+  },
+  {
+    "station": "Haverford",
+    "position": "40.01417,-75.30072"
+  },
+  {
+    "station": "Highland Ave",
+    "position": "39.83367,-75.39316"
+  },
+  {
+    "station": "Highland",
+    "position": "40.07082,-75.21194"
+  },
+  {
+    "station": "Holmesburg Jct",
+    "position": "40.03277,-75.02361"
+  },
+  {
+    "station": "Ivy Ridge",
+    "position": "40.03456,-75.23679"
+  },
+  {
+    "station": "Jefferson Station",
+    "position": "39.985004,-75.226971"
+  },
+  {
+    "station": "Jenkintown-Wyncote",
+    "position": "40.09246,-75.13790"
+  },
+  {
+    "station": "Langhorne",
+    "position": "40.16076,-74.91279"
+  },
+  {
+    "station": "Lansdale",
+    "position": "40.24288,-75.28579"
+  },
+  {
+    "station": "Lansdowne",
+    "position": "39.93701,-75.27253"
+  },
+  {
+    "station": "Lawndale",
+    "position": "40.05157,-75.10277"
+  },
+  {
+    "station": "Levittown",
+    "position": "40.13963,-74.81779"
+  },
+  {
+    "station": "Link Belt",
+    "position": "40.27518,-75.24504"
+  },
+  {
+    "station": "Main St",
+    "position": "40.11735,-75.34864"
+  },
+  {
+    "station": "Malvern",
+    "position": "40.03638,-75.51575"
+  },
+  {
+    "station": "Manayunk",
+    "position": "40.02694,-75.22500"
+  },
+  {
+    "station": "Marcus Hook",
+    "position": "39.82172,-75.41990"
+  },
+  {
+    "station": "Mark",
+    "position": "39.952687,-75.158719"
+  },
+  {
+    "station": "Market East",
+    "position": "39.95261,-75.15925"
+  },
+  {
+    "station": "Meadowbrook",
+    "position": "40.11161,-75.09046"
+  },
+  {
+    "station": "Media",
+    "position": "39.91420,-75.39480"
+  },
+  {
+    "station": "Melrose Park",
+    "position": "40.05972,-75.12936"
+  },
+  {
+    "station": "Merion",
+    "position": "39.99785,-75.25188"
+  },
+  {
+    "station": "Miquon",
+    "position": "40.05845,-75.26685"
+  },
+  {
+    "station": "Morton",
+    "position": "39.90787,-75.32790"
+  },
+  {
+    "station": "Moylan-Rose Valley",
+    "position": "39.90565,-75.38794"
+  },
+  {
+    "station": "Mt Airy",
+    "position": "40.06474,-75.19096"
+  },
+  {
+    "station": "Narberth",
+    "position": "40.00467,-75.26224"
+  },
+  {
+    "station": "Neshaminy Falls",
+    "position": "40.14729,-74.96140"
+  },
+  {
+    "station": "New Britain",
+    "position": "40.29719,-75.18042"
+  },
+  {
+    "station": "Newark",
+    "position": "39.66997,-75.75353"
+  },
+  {
+    "station": "Noble",
+    "position": "40.10428,-75.12444"
+  },
+  {
+    "station": "Norristown TC",
+    "position": "40.11321,-75.34562"
+  },
+  {
+    "station": "North Broad St",
+    "position": "39.99343,-75.15496"
+  },
+  {
+    "station": "North Hills",
+    "position": "40.11234,-75.17050"
+  },
+  {
+    "station": "North Philadelphia",
+    "position": "39.99791,-75.15398"
+  },
+  {
+    "station": "North Wales",
+    "position": "40.21375,-75.27771"
+  },
+  {
+    "station": "Norwood",
+    "position": "39.89061,-75.30364"
+  },
+  {
+    "station": "Olney",
+    "position": "40.03244,-75.12445"
+  },
+  {
+    "station": "Oreland",
+    "position": "40.11867,-75.18549"
+  },
+  {
+    "station": "Overbrook",
+    "position": "39.98978,-75.25034"
+  },
+  {
+    "station": "Overbrook Int",
+    "position": "39.98990,-75.25000"
+  },
+  {
+    "station": "Paoli",
+    "position": "40.04288,-75.48467"
+  },
+  {
+    "station": "Penllyn",
+    "position": "40.17064,-75.24523"
+  },
+  {
+    "station": "Pennbrook",
+    "position": "40.22942,-75.28205"
+  },
+  {
+    "station": "Philmont",
+    "position": "40.12127,-75.04568"
+  },
+  {
+    "station": "Primos",
+    "position": "39.92121,-75.29927"
+  },
+  {
+    "station": "Prospect Park",
+    "position": "39.88648,-75.31239"
+  },
+  {
+    "station": "Queen Lane",
+    "position": "40.02250,-75.17845"
+  },
+  {
+    "station": "Radnor",
+    "position": "40.04450,-75.36040"
+  },
+  {
+    "station": "Ridley Park",
+    "position": "39.88002,-75.32306"
+  },
+  {
+    "station": "Rosemont",
+    "position": "40.02833,-75.32765"
+  },
+  {
+    "station": "Roslyn",
+    "position": "40.12079,-75.13410"
+  },
+  {
+    "station": "Rydal",
+    "position": "40.10723,-75.11073"
+  },
+  {
+    "station": "Ryers",
+    "position": "40.06326,-75.08735"
+  },
+  {
+    "station": "Secane",
+    "position": "39.91528,-75.31057"
+  },
+  {
+    "station": "Sedgwick",
+    "position": "40.06244,-75.18484"
+  },
+  {
+    "station": "Sharon Hill",
+    "position": "39.90430,-75.27096"
+  },
+  {
+    "station": "Somerton",
+    "position": "40.13016,-75.01352"
+  },
+  {
+    "station": "Spring Mill",
+    "position": "40.07404,-75.28487"
+  },
+  {
+    "station": "St. Davids",
+    "position": "40.04388,-75.37250"
+  },
+  {
+    "station": "St. Martins",
+    "position": "40.06526,-75.20424"
+  },
+  {
+    "station": "Stenton",
+    "position": "40.05988,-75.17826"
+  },
+  {
+    "station": "Strafford",
+    "position": "40.04961,-75.40447"
+  },
+  {
+    "station": "Suburban Station",
+    "position": "39.9538889,-75.1677778"
+  },
+  {
+    "station": "Swarthmore",
+    "position": "39.90221,-75.35089"
+  },
+  {
+    "station": "Tacony",
+    "position": "40.02283,-75.03982"
+  },
+  {
+    "station": "Temple U",
+    "position": "39.98060,-75.14987"
+  },
+  {
+    "station": "Thorndale",
+    "position": "39.99220,-75.76669"
+  },
+  {
+    "station": "Torresdale",
+    "position": "40.05458,-74.98443"
+  },
+  {
+    "station": "Trenton",
+    "position": "40.21752,-74.75507"
+  },
+  {
+    "station": "Trevose",
+    "position": "40.14037,-74.98259"
+  },
+  {
+    "station": "Tulpehocken",
+    "position": "40.03520,-75.18717"
+  },
+  {
+    "station": "University City",
+    "position": "39.94710,-75.19120"
+  },
+  {
+    "station": "Upsal",
+    "position": "40.04174,-75.19044"
+  },
+  {
+    "station": "Villanova",
+    "position": "40.03856,-75.34290"
+  },
+  {
+    "station": "Wallingford",
+    "position": "39.90345,-75.37259"
+  },
+  {
+    "station": "Warminster",
+    "position": "40.19427,-75.09022"
+  },
+  {
+    "station": "Washington Lane",
+    "position": "40.05165,-75.17243"
+  },
+  {
+    "station": "Wayne Jct",
+    "position": "40.02222,-75.16"
+  },
+  {
+    "station": "Wayne Station",
+    "position": "40.02140,-75.16102"
+  },
+  {
+    "station": "West Trenton",
+    "position": "40.26120,-74.81410"
+  },
+  {
+    "station": "Whitford",
+    "position": "40.01472,-75.63805"
+  },
+  {
+    "station": "Willow Grove",
+    "position": "40.14313,-75.11521"
+  },
+  {
+    "station": "Wilmington",
+    "position": "39.73740,-75.55360"
+  },
+  {
+    "station": "Wissahickon",
+    "position": "40.01689,-75.21183"
+  },
+  {
+    "station": "Wister",
+    "position": "40.03613,-75.16215"
+  },
+  {
+    "station": "Woodbourne",
+    "position": "40.19137,-74.89054"
+  },
+  {
+    "station": "Wyndmoor",
+    "position": "40.07383,-75.19783"
+  },
+  {
+    "station": "Wynnefield Avenue",
+    "position": "39.99139,-75.22595"
+  },
+  {
+    "station": "Wynnewood",
+    "position": "40.00269,-75.27384"
+  },
+  {
+    "station": "Yardley",
+    "position": "40.23531,-74.83087"
+  }
+]

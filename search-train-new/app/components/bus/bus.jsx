@@ -167,16 +167,7 @@ class Bus extends React.Component{
 		    //console.log(this.state.buses)
 		});
 
-		var routeN;
-		if (route == '15B'){
-			routeN = '15b';
-		}else if (route == '36B'){
-			routeN = '36b';
-		}else{
-			routeN = route;
-		}
-
-		var url2 = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt+"_route_" + routeN;
+		var url2 = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt+"_route_" + route;
 
 		//get the detail of Alerts API data
 		fetchJsonp(url2,{
@@ -190,16 +181,7 @@ class Bus extends React.Component{
 				this.setState({alerts: json[0]});
 			});
 
-		var routeN2;
-		if (route2 == '15B'){
-			routeN2 = '15b';
-		}else if (route2 == '36B'){
-			routeN2 = '36b';
-		}else{
-			routeN2 = route2;
-		}
-
-		var url3 = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt2+"_route_" + routeN2;
+		var url3 = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt2+"_route_" + route2;
 
 		//get the detail of Alerts API data
 		fetchJsonp(url3,{
@@ -213,16 +195,7 @@ class Bus extends React.Component{
 				this.setState({alerts2: json[0]});
 			});
 
-		var routeN3;
-		if (route3 == '15B'){
-			routeN3 = '15b';
-		}else if (route3 == '36B'){
-			routeN3 = '36b';
-		}else{
-			routeN3 = route3;
-		}	
-
-		var url4 = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt3+"_route_" + routeN3;
+		var url4 = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt3+"_route_" + route3;
 
 		//get the detail of Alerts API data
 		fetchJsonp(url4,{
@@ -235,7 +208,6 @@ class Bus extends React.Component{
 				//console.log(json);
 				this.setState({alerts3: json[0]});
 			});
-
 	}
 
 	componentWillUnmount(){

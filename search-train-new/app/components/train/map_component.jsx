@@ -72,7 +72,7 @@ class MapComponent extends React.Component {
       //center: DEFAULT_POSITION,
       zoom: 10,
       mapTypeControl: false,
-      gestureHandling: 'greedy'
+      gestureHandling: 'cooperative'
     });
     //console.log(this.map.getZoom());
 

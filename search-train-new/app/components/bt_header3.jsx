@@ -145,7 +145,7 @@ class BTHeader3 extends React.Component{
 		    </div>
 		    <div className="collapse navbar-collapse" id="myNavbar1">
 		    <ul className="nav navbar-nav">
-		    <li className="dropdown"><a className="dropdown-toggle" data-toggle="dropdown" href="#"> 1-35 <span className="caret"></span></a>
+		    <li className="dropdown"><a className="dropdown-toggle" data-toggle="dropdown" href="#"> 1-36B <span className="caret"></span></a>
 		    <ul className="dropdown-menu">
 		    <li ><Link to={`/bus_trolley/${firstLocation}/${secondLocation}/1`}>1</Link></li>
 		    <li ><Link to={`/bus_trolley/${firstLocation}/${secondLocation}/2`}>2</Link></li>
