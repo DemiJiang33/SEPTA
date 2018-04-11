@@ -12,8 +12,8 @@ class NTARR extends React.Component{
 	constructor(props){
 		super(props);
 		this.state ={
-			bStation: '9th St',
-			dStation: '9th St',
+			bStation: '30th Street Station',
+			dStation: '30th Street Station',
 			submit: false
 		};
 		this.handleChange1 = this.handleChange1.bind(this);
@@ -112,6 +112,12 @@ class NTARR extends React.Component{
 		      <label className="col-sm-5 col-sm-4 col-form-label" style={styleLabel}><img src={fromArrow} /> Your Beginning Station</label>
 		      <div className="col-sm-7 col-sm-8">
 		      <select style={styleSelect} className="form-control" onChange={this.handleChange1}>
+		        
+		        <option value="30th Street Station">30th Street</option>
+		        <option value="Jefferson Station">Jefferson Station (formerly Market East)</option>
+		        <option value="Suburban Station">Suburban Station</option>
+		        <option value="Temple U">Temple University</option>
+		        <option value="University City">University City</option>
 
 		        <option value="9th St">9th Street</option>
 		        <option value="30th Street Station">30th Street</option>
@@ -301,6 +307,12 @@ class NTARR extends React.Component{
 		      <label className="col-sm-5 col-sm-4 col-form-label" style={styleLabel}><img src={toArrow} />Your Destination Station</label>
 		      <div className="col-sm-7 col-sm-8">
 		      <select style={styleSelect} className="form-control" onChange={this.handleChange2}>
+
+		        <option value="30th Street Station">30th Street</option>
+		        <option value="Jefferson Station">Jefferson Station (formerly Market East)</option>
+		        <option value="Suburban Station">Suburban Station</option>
+		        <option value="Temple U">Temple University</option>
+		        <option value="University City">University City</option>
 
 		        <option value="9th St">9th Street</option>
 		        <option value="30th Street Station">30th Street</option>
