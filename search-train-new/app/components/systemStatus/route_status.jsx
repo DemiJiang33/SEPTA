@@ -35,16 +35,7 @@ class RouteStatus extends React.Component{
 			bt = "bus";
 		}
 
-		var routeN;
-		if (route == '15B'){
-			routeN = '15b';
-		}else if (route == '36B'){
-			routeN = '36b';
-		}else{
-			routeN = route;
-		}
-
-		var url = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt+"_route_" + routeN;
+		var url = "https://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=" +bt+"_route_" + route;
 
 		//get the detail of Alert data
 		fetchJsonp(url,{

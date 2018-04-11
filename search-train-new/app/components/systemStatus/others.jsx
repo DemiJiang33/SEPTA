@@ -46,7 +46,7 @@ class Others extends React.Component{
 			<h3><img src={NHSLStatus} />&nbsp;&nbsp;Norristown High Speed Line</h3>
 			<hr/>
 			</center>
-			<ul className="others2-status">
+			<ul className="others-cct-status">
 			<OthersStatus line="rr_route_nhsl" />
 			</ul>
 			<br/>
