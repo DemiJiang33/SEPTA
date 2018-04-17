@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "webpack-dev-server --open --config webpack.dev.js",
     "clean": "rimraf dist",
-    "build": "SET NODE_ENV=production npm run rimraf dist && webpack --config webpack.prod.js"
+    "build": "NODE_ENV=production npm run clean && webpack --config webpack.prod.js"
   },
   "author": "Demi",
   "license": "ISC",
@@ -39,6 +39,7 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-scroll-up-button": "^1.5.11",
+    "react-select": "^1.2.1",
     "redux": "^3.7.2"
   },
   "description": ""
