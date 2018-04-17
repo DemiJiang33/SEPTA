@@ -75,7 +75,7 @@ class OthersDetail extends React.Component{
 
 		return(
 			<div>
-			<OthersMap line = {this.props.line} />
+			{/*<OthersMap line = {this.props.line} />*/}
 
 			<div style={divStyle}>
 

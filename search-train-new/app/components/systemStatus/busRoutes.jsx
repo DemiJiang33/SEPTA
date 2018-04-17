@@ -55,6 +55,10 @@ class BusRoutes extends React.Component{
 			<RouteStatus route = "33" />
 			<RouteStatus route = "35" />
 			<RouteStatus route = "36B" />
+			<br />
+			<br className="brHidden" />
+			<br className="brHidden" />
+			<br className="brHidden" />
 			</ul>
 			<br/>
 			<div >
@@ -95,6 +99,10 @@ class BusRoutes extends React.Component{
 			<RouteStatus route = "70" />
 			<RouteStatus route = "73" />
 			<RouteStatus route = "75" />
+			<br />
+			<br className="brHidden" />
+			<br className="brHidden" />
+			<br className="brHidden" />
 			</ul>
 			<br/>
 			<div >
@@ -133,8 +141,7 @@ class BusRoutes extends React.Component{
 			<RouteStatus route = "113" />
 			<RouteStatus route = "114" />
 			<RouteStatus route = "115" />
-			<br className="brHidden"/>
-			<br className="brHidden"/>
+			<br />
 			</ul>
 			<br/>
 			<div >
@@ -175,6 +182,10 @@ class BusRoutes extends React.Component{
 			<RouteStatus route = "H" />
 			<RouteStatus route = "XH" />
 			<RouteStatus route = "BLVDDIR" />
+			<br className="brHidden" />
+			<br className="brHidden" />
+			<br className="brHidden" />
+			<br className="brHidden" />
 			</ul>
 			<br/>
 			</div>}
@@ -187,7 +198,7 @@ class BusRoutes extends React.Component{
 			<h3>10-102</h3>
 			</center>
 			</div>
-			<ul className="route-status">
+			<ul className="trolley-status">
 			<RouteStatus route = "10" />
 			<RouteStatus route = "11" />
 			<RouteStatus route = "13" />

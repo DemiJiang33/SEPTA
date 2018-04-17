@@ -1,7 +1,7 @@
 ul.route-status{
-    -webkit-columns: 4;
-    -moz-columns: 4;
-    columns: 4;
+    -webkit-columns: 5;
+    -moz-columns: 5;
+    columns: 5;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -15,6 +15,16 @@ ul.line-status{
     margin: 0;
     padding: 0;
 }
+
+ul.trolley-status{
+    -webkit-columns: 4;
+    -moz-columns: 4;
+    columns: 4;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 ul.others-status{
     -webkit-columns: 2;
     -moz-columns: 2;
@@ -46,6 +56,14 @@ ul.others-cct-status{
 }
 @media screen and (max-width: 768px){
     ul.route-status{
+        -webkit-columns: 2;
+        -moz-columns: 2;
+        columns: 2;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    ul.trolley-status{
         -webkit-columns: 2;
         -moz-columns: 2;
         columns: 2;

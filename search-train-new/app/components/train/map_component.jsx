@@ -2,40 +2,6 @@ import React from "react";
 
 import bluedot from '../../../images/bluedot.png';
 
-import trainRed from '../../../images/trainRed.png';
-import trainBlue from '../../../images/trainBlue.png';
-
-import TrainAIR from '../../../images/TrainAIR.png';
-import TrainVAIR from '../../../images/TrainVAIR.png';
-import TrainB from '../../../images/TrainB.png';
-import TrainBDefault from '../../../images/TrainBDefault.png';
-import TrainVDefault from '../../../images/TrainVDefault.png';
-import TrainDefault from '../../../images/TrainDefault.png';
-import TrainCHE from '../../../images/TrainCHE.png';
-import TrainVCHE from '../../../images/TrainVCHE.png';
-import TrainCHW from '../../../images/TrainCHW.png';
-import TrainVCHW from '../../../images/TrainVCHW.png';
-import TrainCYN from '../../../images/TrainCYN.png';
-import TrainVCYN from '../../../images/TrainVCYN.png';
-import TrainFOX from '../../../images/TrainFOX.png';
-import TrainVFOX from '../../../images/TrainVFOX.png';
-import TrainLAN from '../../../images/TrainLAN.png';
-import TrainVLAN from '../../../images/TrainVLAN.png';
-import TrainMED from '../../../images/TrainMED.png';
-import TrainVMED from '../../../images/TrainVMED.png';
-import TrainNOR from '../../../images/TrainNOR.png';
-import TrainVNOR from '../../../images/TrainVNOR.png';
-import TrainPAO from '../../../images/TrainPAO.png';
-import TrainVPAO from '../../../images/TrainVPAO.png';
-import TrainTRE from '../../../images/TrainTRE.png';
-import TrainVTRE from '../../../images/TrainVTRE.png';
-import TrainWAR from '../../../images/TrainWAR.png';
-import TrainVWAR from '../../../images/TrainVWAR.png';
-import TrainWIL from '../../../images/TrainWIL.png';
-import TrainVWIL from '../../../images/TrainVWIL.png';
-import TrainWTR from '../../../images/TrainWTR.png';
-import TrainVWTR from '../../../images/TrainVWTR.png';
-
 var mapMarkersArray = []; //makes an array of the markers you place on the map,
                           //it is ussd in clearMarkers().
 var map;
@@ -265,6 +231,7 @@ class MapComponent extends React.Component {
 
       return(
         markersIcon[i] = {line: train.line, consist: train.consist,
+          heading: train.heading,
           source: train.SOURCE, dest: train.dest,
           trainNo: train.trainno, nextStop: train.nextstop,
           late: lateMessage},
@@ -277,90 +244,74 @@ class MapComponent extends React.Component {
     for(var i = 0; i < markers.length; i++){
       var markerPosition = markers[i];// Only need lat & lng here.
       var markerIcon = markersIcon[i];// Only need line, consist and trainno here.
-      //console.log(markerIcon);
+      //console.log(markerIcon.heading);
 
       //Icon begin here
-      var icon = '';
-      var modifier = '';
-      if(markerIcon.consist && markerIcon.consist.toUpperCase().indexOf("TBD") == -1 ){
-        var carNo = markerIcon.consist.split(",");
-        switch ( parseInt(carNo[0] / 100) ) {
-          case 1:
-          case 2:
-          case 3:
-          case 4:
-          break;
-          case 7:
-          case 8:
-          modifier = 'V';
-          break;
-          default:
-          modifier = 'B';
-        }
-        if ( modifier == 'B' )
-          {icon = TrainB}
-        else{
+      var iconColor = '';
           switch ( markerIcon.line ) 
           {
             case 'Warminster':
-            icon = TrainVWAR ;
+            iconColor = "F7AF42" ;
             break;
             case 'Cynwyd':
-            icon = TrainVCYN;
+            iconColor = "6F549E";
             break;
             case 'West Trenton':
-            icon = TrainVWTR;
+            iconColor = "5D5EBC";
             break;
             case 'Fox Chase':
-            icon = TrainVFOX;
+            iconColor = "FF823D";
             break;
             case 'Lansdale\/Doylestown':
-            icon = TrainVLAN;
+            iconColor = "775B49";
             break;
             case 'Chestnut Hill West':
-            icon = TrainVCHW;
+            iconColor = "00B4B2";
             break;
             case 'Chestnut Hill East':
-            icon = TrainVCHE;
+            iconColor = "94763C";
             break;
             case 'Media\/Elwyn':
-            icon = TrainVMED;
+            iconColor = "007CC8";
             break;
             case 'Manayunk\/Norristown':
-            icon = TrainVNOR;
+            iconColor = "EE4C69";
             break;
             case 'Wilmington\/Newark':
-            icon = TrainVWIL;
+            iconColor = "8AD16B";
             break;
             case 'Trenton':
-            icon = TrainVTRE;
+            iconColor ="F683C9";
             break;
             case 'Paoli\/Thorndale':
-            icon = TrainVPAO;
+            iconColor = "20825C";
             break;
             case 'Airport':
-            icon = TrainVAIR;
+            iconColor = "91456C";
             break;
             default:
-            icon = TrainVDefault;
+            iconColor = "00539F";//blue
           }
-        }
+      var circleArrow;
+      if(markerIcon.heading == null){
+        circleArrow = '<path class="st0" d="M71,61c1.2,0,2.2-1,2.2-2.2v-6.5c0-1.2-1-2.2-2.2-2.2h-6c-1.2,0-2.2,1-2.2,2.2v6.5c0,1.2,1,2.2,2.2,2.2H71z"/>';
+      }else{
+        var angle = markerIcon.heading + 180;
+        circleArrow = '<path class="st0" d="M1.7,69.3c0,22.2,10.7,41.9,27.3,54.1c0.2,0.3,36.6,41.8,36.6,41.8c1.9,1.9,5.1,1.9,7,0    c0,0,36.4-41.5,36.6-41.8c16.5-12.3,27.3-32,27.3-54.1c0-37.2-30.2-67.4-67.4-67.4S1.7,32.1,1.7,69.3z" transform="rotate(' + angle + ' 68.8 69.1)"/>'; 
       }
-      else
-      {
-      if ( markerIcon.trainNo % 2 ) // Even
-        icon = trainRed;
-      else
-        icon = trainBlue;
-    }
-      //icon end here
+      var iconUrl = 'data:image/svg+xml;utf-8, <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="40" height="46" viewBox="-30 0 199.8 169.8" xml:space="preserve">  <style type="text/css">   .st0{fill:%23' + iconColor + ';}  .st1{fill:%23FFFFFF;stroke:%23' + iconColor + ';stroke-width:4.6757;stroke-miterlimit:10;}  .st2{fill:%23414042;} </style> <g> ' + circleArrow + '<circle class="st1" cx="68.8" cy="69.1" r="63"/> </g> <g> <path class="st2" d="M88.3,91.1v-2.3h2.2l5.1-11.1v-33H41.1v33l5.1,11h2.4V91h3.8v-3.9h1.9l2.5-4.1v-4h3.3l0.2-29.7    c0.1-1,0.6-0.9,2.2-1c0.2,0,4,0,11.5,0c1.7,0,2.4-0.2,2.4,1.3V79h3.3v4l2.6,4.1h2.1V91L88.3,91.1L88.3,91.1z M47.3,59.9    c-0.5,0-0.8-0.5-0.8-0.9V49c0-0.4,0.4-0.6,0.8-0.6h8.1c0.4,0,0.8,0.2,0.8,0.6v9.9c0,0.5-0.3,0.9-0.8,0.9L47.3,59.9L47.3,59.9z    M54.4,73.2c-1.4,0-2.6-1.2-2.6-2.6S53,68,54.4,68s2.6,1.2,2.6,2.6S55.9,73.2,54.4,73.2z M81.8,73.1c-1.4,0-2.6-1.2-2.6-2.6    s1.2-2.6,2.6-2.6s2.6,1.2,2.6,2.6C84.5,71.9,83.3,73.1,81.8,73.1z M80.5,60c-0.5,0-0.8-0.5-0.8-0.9v-9.9c0-0.4,0.4-0.6,0.8-0.6h8.1    c0.4,0,0.8,0.2,0.8,0.6V59c0,0.5-0.3,0.9-0.8,0.9L80.5,60L80.5,60z"/>    <path class="st2" d="M93.7,37.7c-3.5-2.2-6.4-2.7-12.4-3.7l-11.8-1v-4.7h1.1v-3.8h-1.1v-2.2l4,0.1c-0.4-0.1,5.2,0.6,7.2,1.9    c0.3,0.2,0.7,0.5,1,0.2c0.1-0.2,1.7-1.9,1.7-1.9c-1.1-1.4-2.7-2.8-3.1-2.9l-6.8-1.1H62.9l-5.6,1.1c-0.2,0-3.1,2.7-3,3.1    c0,0,1.6,2,1.7,2c0,0,0.3-0.1,0.8-0.4c1.9-1,3.8-1.6,5.8-1.7l4.6-0.2v2.2h-1.3v3.8h1.3V33l-13.5,1c-2.4,0.4-7.6,0.7-10.9,3.8    c-1.5,1.4-1.6,5.5-1.7,5.5h54.5C95.7,43.3,95.5,38.8,93.7,37.7z M56.8,41.7h-9.3c0,0,0-1.1,0-2.1c0-0.9,0-1.1,0.9-1.4    c4.8-1.6,5.9-1.2,7.3-1.3c0.7,0,1.1,0.2,1.3,0.6L56.8,41.7z M76.8,39.6c0,1.2-1,2.2-2.2,2.2H62.4c-1.2,0-2.2-1-2.2-2.2v-1    c0-1.2,1-2.2,2.2-2.2h12.2c1.2,0,2.2,1,2.2,2.2C76.8,38.6,76.8,39.6,76.8,39.6z M89.3,41.7h-9.4v-4.1c0.1-0.4,0.6-0.6,1.3-0.6    c1.3,0,2.4-0.3,7.3,1.3c0.9,0.3,0.9,0.5,0.9,1.4C89.4,40.6,89.3,41.7,89.3,41.7z"/>    <path class="st2" d="M71,61c1.2,0,2.2-1,2.2-2.2v-6.5c0-1.2-1-2.2-2.2-2.2h-6c-1.2,0-2.2,1-2.2,2.2v6.5c0,1.2,1,2.2,2.2,2.2H71z"/>    <rect x="57.9" y="80.1" class="st2" width="20.7" height="4.1"/>    <path class="st2" d="M63.4,37.3c-0.9,0-1.7,0.8-1.7,1.7s0.8,1.7,1.7,1.7s1.7-0.8,1.7-1.7S64.4,37.3,63.4,37.3z"/>    <path class="st2" d="M73.7,37.4c-0.9,0-1.7,0.8-1.7,1.7s0.8,1.7,1.7,1.7c0.9,0,1.7-0.8,1.7-1.7C75.4,38.1,74.7,37.4,73.7,37.4z"/>    <path class="st2" d="M100.5,108.1l-3.3-5.5h-3.3l-1.7-2.9h3.3L92.6,95h-3.1l-0.9-1.5H84l0.8,1.5H52.4l0.8-1.5h-4.7L47.7,95h-3.1    l-2.8,4.7H45l-1.7,2.9H40l-3.3,5.5h3.6l-3,5.2h8.5l2.4-5.2H89l2.4,5.2h8.5l-3-5.2H100.5z M49.3,102.6l1.3-2.9h35.9l1.3,2.9H49.3z"/>    </g></svg>'
 
+      var iconNew = {
+        url: iconUrl,
+        anchor: new google.maps.Point(20,23)
+      }
+      //icon end here
 
       this.marker = new google.maps.Marker({
         position: {lat: parseFloat(markerPosition.lat), lng: parseFloat(markerPosition.lng)},
         map: map,
           //animation: google.maps.Animation.DROP,
-          icon: icon
+          icon: iconNew
         });
 
       // It is used to show message

@@ -64,7 +64,8 @@ class AppTrain extends React.Component{
 		});
 
 		//get the TrainView API data
-		fetchJsonp(`https://www3.septa.org/api/TrainView/index.php`,{
+		// Old version https://www3.septa.org/api/TrainView/index.php
+		fetchJsonp(`https://apitest.septa.org/api/TrainView/`,{
 			timeout: 6000,
 		}).then(
 		response =>{
