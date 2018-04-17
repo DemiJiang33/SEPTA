@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const VENDOR_LIBS = [
-  'es6-promise', 'lodash', 'fetch-jsonp', 'react-router-dom',
-  'react', 'react-dom', 'react-scroll-up-button'
+  'axios','es6-promise', 'lodash', 'fetch-jsonp', 'react-router-dom',
+  'react', 'react-dom', 'react-scroll-up-button','react-select'
 ];
 
 module.exports = {
