@@ -19,7 +19,7 @@ class Others extends React.Component{
 
 			{this.props.showMFL && <div>
 			<center>
-			<h3><img src={MFLStatus} />&nbsp;&nbsp;Market/Frankford Line</h3>
+			<h3><img src={MFLStatus} />Market/Frankford Line</h3>
 			<hr/>
 			</center>
 			<ul className="others-status">
@@ -31,7 +31,7 @@ class Others extends React.Component{
 
 			{this.props.showBSL && <div>
 			<center>
-			<h3><img src={BSLStatus} />&nbsp;&nbsp;Broad Street Line</h3>
+			<h3><img src={BSLStatus} />Broad Street Line</h3>
 			<hr/>
 			</center>
 			<ul className="others-status">
@@ -43,7 +43,7 @@ class Others extends React.Component{
 
 			{this.props.showNHSL && <div>
 			<center>
-			<h3><img src={NHSLStatus} />&nbsp;&nbsp;Norristown High Speed Line</h3>
+			<h3><img src={NHSLStatus} />Norristown High Speed Line</h3>
 			<hr/>
 			</center>
 			<ul className="others-cct-status">
@@ -54,7 +54,7 @@ class Others extends React.Component{
 
 			{this.props.showCCT && <div>
 			<center>
-			<h3><img src={CCTStatus} />&nbsp;&nbsp;CCT</h3>
+			<h3><img src={CCTStatus} />CCT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
 			<hr/>
 			</center>
 			<ul className="others-cct-status">

@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const VENDOR_LIBS = [
   'axios','es6-promise', 'lodash', 'fetch-jsonp', 'react-router-dom',
-  'react', 'react-dom', 'react-scroll-up-button','react-select'
+  'react', 'react-dom', 'react-geolocated','react-scroll-up-button','react-select'
 ];
 
 module.exports = {

@@ -51,10 +51,12 @@ render(){
 		return(
 			<li>
 			<Link to={'/others/'+this.state.line}>
+			<center>
 			<span style = {{fontSize: 'large'}}>{this.state.status[0].route_name}</span>
 			<img style={styleAlert} src={alertIcon} />
 			<img style={styleDetour} src={detourIcon} /> 
 			<img style={styleAdvisory} src={advisoryIcon} /> 
+			</center>
 			</Link>
 			<hr/>
 			</li>

@@ -1,6 +1,7 @@
 import React from "react";
 import ScrollUpButton from "react-scroll-up-button";
 import fetchJsonp from "fetch-jsonp";
+import {geolocated} from 'react-geolocated';
 
 import SocialMedia from '../social_media.jsx';
 import Header from '../header.jsx';
@@ -34,6 +35,12 @@ class NTAIndex extends React.Component{
 	}
 
 	render(){
+		//console.log(this.props.coords);
+		
+		/*if(!this.props.coords){
+			return <div>Loading...</div>;
+		}*/
+
 		return(
 			<div>
 			<Header />
@@ -41,7 +48,7 @@ class NTAIndex extends React.Component{
 
 		    {this.state.genericAlert && <p style={{color: 'red'}} dangerouslySetInnerHTML={{__html: this.state.genericAlert}} />}
 
-		    <NTARR />
+		    <NTARR coords={this.props.coords}/>
 
 		    <SocialMedia />
 		    <ScrollUpButton ContainerclassName="ScrollUpButton__Container"/>
@@ -51,4 +58,10 @@ class NTAIndex extends React.Component{
 	}
 }
 
-export default NTAIndex;
+export default geolocated({
+  positionOptions: {
+    enableHighAccuracy: true
+  },
+  watchPosition: true,
+  geolocationProvider: navigator.geolocation
+})(NTAIndex);

@@ -17,9 +17,8 @@ class BusRoutes extends React.Component{
 			{this.props.showBus && <div>
 			<div >
 			<center>
-			<h3><img src={busStatus} />&nbsp;&nbsp;Bus Routes</h3>
+			<h3><img src={busStatus} />Bus Routes</h3>
 			<hr/>
-			<h3>1-35</h3>
 			</center>
 			</div>
 			<ul className="route-status">
@@ -55,18 +54,6 @@ class BusRoutes extends React.Component{
 			<RouteStatus route = "33" />
 			<RouteStatus route = "35" />
 			<RouteStatus route = "36B" />
-			<br />
-			<br className="brHidden" />
-			<br className="brHidden" />
-			<br className="brHidden" />
-			</ul>
-			<br/>
-			<div >
-			<center>
-			<h3>37-75</h3>
-			</center>
-			</div>
-			<ul className="route-status">
 			<RouteStatus route = "37" />
 			<RouteStatus route = "38" />
 			<RouteStatus route = "39" />
@@ -99,18 +86,6 @@ class BusRoutes extends React.Component{
 			<RouteStatus route = "70" />
 			<RouteStatus route = "73" />
 			<RouteStatus route = "75" />
-			<br />
-			<br className="brHidden" />
-			<br className="brHidden" />
-			<br className="brHidden" />
-			</ul>
-			<br/>
-			<div >
-			<center>
-			<h3>77-115</h3>
-			</center>
-			</div>
-			<ul className="route-status">
 			<RouteStatus route = "77" />
 			<RouteStatus route = "78" />
 			<RouteStatus route = "79" />
@@ -141,15 +116,6 @@ class BusRoutes extends React.Component{
 			<RouteStatus route = "113" />
 			<RouteStatus route = "114" />
 			<RouteStatus route = "115" />
-			<br />
-			</ul>
-			<br/>
-			<div >
-			<center>
-			<h3>117-XH</h3>
-			</center>
-			</div>
-			<ul className="route-status">
 			<RouteStatus route = "117" />
 			<RouteStatus route = "118" />
 			<RouteStatus route = "119" />
@@ -186,6 +152,8 @@ class BusRoutes extends React.Component{
 			<br className="brHidden" />
 			<br className="brHidden" />
 			<br className="brHidden" />
+			<br className="brHidden" />
+			<br className="brHidden" />
 			</ul>
 			<br/>
 			</div>}
@@ -193,9 +161,8 @@ class BusRoutes extends React.Component{
 			{this.props.showTrolley && <div>
 			<div >
 			<center>
-			<h3><img src={trolleyStatus} />&nbsp;&nbsp;Trolley Lines</h3>
+			<h3><img src={trolleyStatus} />Trolley Lines</h3>
 			<hr/>
-			<h3>10-102</h3>
 			</center>
 			</div>
 			<ul className="trolley-status">

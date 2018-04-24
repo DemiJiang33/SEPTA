@@ -71,11 +71,13 @@ class RouteStatus extends React.Component{
 		return(
 			<li>
 			<Link to={'/bus_trolley/'+this.props.route}>
+			<center>
 			<span style = {{fontSize: 'large'}}>{this.props.route}</span>
 			<img style={styleAlert} src={alertIcon} />
 			<img style={styleDetour} src={detourIcon} /> 
 			<img style={styleAdvisory} src={advisoryIcon} /> 
 			<img src={pinIcon} /> 
+			</center>
 			</Link>
 			<hr/>
 			</li>

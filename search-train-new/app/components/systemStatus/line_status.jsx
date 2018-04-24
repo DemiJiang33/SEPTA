@@ -32,11 +32,13 @@ class LineStatus extends React.Component{
 		return(
 			<li>
 			<Link to={'/regionalrail/'+this.props.statusLine.route_name}>
+			<center>
 			<span style = {{fontSize: 'large'}}>{this.props.statusLine.route_name}</span>
 			<img style={styleAlert} src={alertIcon} />
 			<img style={styleDetour} src={detourIcon} /> 
 			<img style={styleAdvisory} src={advisoryIcon} /> 
 			<img src={pinIcon} />
+			</center>
 			</Link>
 			<hr/>
 			</li>

@@ -18,12 +18,20 @@ class NTARR extends React.Component{
 		this.state ={
 			bStation: '',
 			dStation: '',
-			submit: false
+			submit: false,
+			coords: props.coords,
+			position1: '',
+			firstDist: '',
+			//position2: '',
+			//secondDist: '',
+			//position3: '',
+			//thirdDist: '',
 		};
 		this.handleChange1 = this.handleChange1.bind(this);
 		this.handleChange2 = this.handleChange2.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.onClickNearMe = this.onClickNearMe.bind(this);
+		this.onClickNearMe2 = this.onClickNearMe2.bind(this);
 	}
 
 	handleChange1(bStation) {
@@ -48,44 +56,117 @@ class NTARR extends React.Component{
 	}
 
 	onClickNearMe(){
-		function distance(lat1, lon1, lat2, lon2) {
-			var deltaX = diff(lat1, lat2);
-			var deltaY = diff(lon1, lon2);
-			var dist = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
+		if(this.props.coords){
+			function distance(lat1, lon1, lat2, lon2) {
+			var radlat1 = Math.PI * lat1/180
+			var radlat2 = Math.PI * lat2/180
+			var theta = lon1-lon2
+			var radtheta = Math.PI * theta/180
+			var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+			dist = Math.acos(dist)
+			dist = dist * 180/Math.PI
+			dist = dist * 60 * 1.1515;
+			dist = (Math.round(dist * 100)/100).toFixed(2);
 			return (dist);
 		}
 
-		function diff (num1, num2) {
-			if (num1 > num2) {
-				return (num1 - num2);
-			} else {
-				return (num2 - num1);
-			}
-		};
+		var latitude = this.props.coords.latitude;
+		var longitude = this.props.coords.longitude;
+		var markerDist = [];
 
-		var minDist = 1;
-		var nearest_text = '*None*';
+		var firstDist; //secondDist ,thirdDist;
+		var position1; //position2, position3;
+		firstDist = Number.MAX_VALUE;
+		//firstDist = secondDist = thirdDist = Number.MAX_VALUE;
+		position1 = '*None*';
+		//position1 = position2 = position3 = '*None*';
+		for (var i = 0 ; i < DATA.length ; i++){
+			var lat = DATA[i].position.split(',')[0];
+			var lon = DATA[i].position.split(',')[1];
+			markerDist[i] = distance(latitude, longitude, lat, lon);
 
-		navigator.geolocation.getCurrentPosition(function(location) {
-			var latitude = location.coords.latitude;
-			var longitude = location.coords.longitude;
-			for (var i = 0 ; i < DATA.length ; i++){
-				var lat = DATA[i].position.split(',')[0];
-				var lon = DATA[i].position.split(',')[1];
-				var markerDist = distance(latitude, longitude, lat, lon);
-				//console.log(markerDist);
-				//console.log(DATA[i].station);
-				if(markerDist < minDist){
-					minDist = markerDist;
-					nearest_text = DATA[i].station;
-				}
-			}
-			alert('The nearest station is : ' + nearest_text);
+			if (markerDist[i] < firstDist){
+                /*thirdDist = secondDist;
+                position3 = position2;
+                secondDist = firstDist;
+                position2 = position1;*/
+                firstDist = markerDist[i];
+                position1 = DATA[i].station;
+            }
+       
+            /* If markerDist[i] is in between firstDist and
+            secondDist then update secondDist  */
+            /*else if (markerDist[i] < secondDist){
+                thirdDist = secondDist;
+                position3 = position2;
+                secondDist = markerDist[i];
+                position2 = DATA[i].station;
+            }
+       
+            else if (markerDist[i] < thirdDist){
+            	thirdDist = markerDist[i];
+            	 position3 = DATA[i].station;
+            }*/
+                
+		}
+
+		this.setState({
+			position1: position1,
+			firstDist: firstDist,
+			bStation: position1,
+			//position2: position2,
+			//secondDist: secondDist,
+			//position3: position3,
+			//thirdDist: thirdDist
 		});
-		
+		}
+	}
+
+	onClickNearMe2(){
+		if(this.props.coords){
+			function distance(lat1, lon1, lat2, lon2) {
+			var radlat1 = Math.PI * lat1/180
+			var radlat2 = Math.PI * lat2/180
+			var theta = lon1-lon2
+			var radtheta = Math.PI * theta/180
+			var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+			dist = Math.acos(dist)
+			dist = dist * 180/Math.PI
+			dist = dist * 60 * 1.1515;
+			dist = (Math.round(dist * 100)/100).toFixed(2);
+			return (dist);
+		}
+
+		var latitude = this.props.coords.latitude;
+		var longitude = this.props.coords.longitude;
+		var markerDist = [];
+
+		var firstDist; 
+		var position1; 
+		firstDist = Number.MAX_VALUE;
+		position1 = '*None*';
+		for (var i = 0 ; i < DATA.length ; i++){
+			var lat = DATA[i].position.split(',')[0];
+			var lon = DATA[i].position.split(',')[1];
+			markerDist[i] = distance(latitude, longitude, lat, lon);
+
+			if (markerDist[i] < firstDist){
+                firstDist = markerDist[i];
+                position1 = DATA[i].station;
+            }
+    
+		}
+
+		this.setState({
+			position1: position1,
+			firstDist: firstDist,
+			dStation: position1
+		});
+		}
 	}
 
 	render(){
+
 		const style={
 			backgroundColor: '#144B88',
 			marginBottom: '2px',
@@ -114,6 +195,16 @@ class NTARR extends React.Component{
 			fontSize: '24px'
 		}
 
+		/*const styleRadio={
+			display: this.state.showRadio ? 'block' : 'none'
+		}*/
+
+		const styleButton={
+			position:'absolute',
+			top: window.innerWidth<768 ? -75 : '',
+			right: 30
+		}
+
 		//console.log("b: " +this.state.bStation);
 		//console.log("d: " +this.state.dStation);
 		//console.log("submit: " +this.state.submit);
@@ -126,16 +217,41 @@ class NTARR extends React.Component{
 			<div>
 			<h3 style={styleTitle}><img src={RRStatus} />&nbsp;&nbsp;Regional Rail</h3>
 
+			{/*<div style={styleRadio}>
+			<label className="radio-inline">
+			The nearest station is {this.state.position1} ({this.state.firstDist} miles)
+			</label>
+			<label className="radio-inline">
+			The nearest station 2 is {this.state.position2} ({this.state.secondDist} miles)
+			</label>
+			<label className="radio-inline">
+			The nearest station 3 is {this.state.position3} ({this.state.thirdDist} miles)
+			</label>
+			<label className="radio-inline" onClick={this.onClickBeginning}>
+			<input type="radio" name="optradio" value="" />
+			Set as Beginning
+			</label>
+
+			<label className="radio-inline" onClick={this.onClickDestination}>
+			<input type="radio" name="optradio" value="" />
+			Set as Destination
+			</label>
+			</div>*/}
+
 			<div style={style} className ="row">
 		      <label className="col-sm-5 col-sm-4 col-form-label" style={styleLabel}><img src={fromArrow} /> Beginning Station</label>
 		      <div className="col-sm-7 col-sm-8">
 		      <Select
+		      id = "beginning"
 		      style={styleSelect}
-		      name="form-field-name"
+		      name="beginning"
 		      value={bStation}
 		      onChange={this.handleChange1}
 		      options={OPTION}
 		      />
+		      </div>
+		      <div className="col-sm-1 col-sm-1">
+		      <button className="btn btn-link" onClick={this.onClickNearMe} style={styleButton}><img src={nearMe} /></button>
 		      </div>
 		    </div>
 
@@ -144,18 +260,20 @@ class NTARR extends React.Component{
 		      <div className="col-sm-7 col-sm-8">
 		      <Select
 		      style={styleSelect}
-		      name="form-field-name"
+		      name="destination"
 		      value={dStation}
 		      onChange={this.handleChange2}
 		      options={OPTION}
 		      />
+		      </div>
+		      <div className="col-sm-1 col-sm-1">
+		      <button className="btn btn-link" onClick={this.onClickNearMe2} style={styleButton}><img src={nearMe} /></button>
 		      </div>
 		    </div>
 
 		    <div>
 		    <button type="submit" onClick={this.handleSubmit} className="btn btn-block btn-primary">Submit</button>
 		    </div>
-		    <button onClick={this.onClickNearMe} style={{position:'absolute', top:5 ,right: 5}} >Near Me<img src={nearMe} /></button>
             {this.state.bStation && this.state.dStation &&
             	<NTARRResults bStation={this.state.bStation} dStation={this.state.dStation} submit={this.state.submit} />}
             </div>
