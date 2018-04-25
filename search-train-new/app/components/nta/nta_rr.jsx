@@ -176,6 +176,7 @@ class NTARR extends React.Component{
 
 		const styleLabel={
 			marginTop: '5px',
+			paddingLeft: '1px',
 			fontSize: 'large',
 			color: 'white'
 		}
@@ -198,12 +199,6 @@ class NTARR extends React.Component{
 		/*const styleRadio={
 			display: this.state.showRadio ? 'block' : 'none'
 		}*/
-
-		const styleButton={
-			position:'absolute',
-			top: window.innerWidth<768 ? -75 : '',
-			right: 30
-		}
 
 		//console.log("b: " +this.state.bStation);
 		//console.log("d: " +this.state.dStation);
@@ -239,8 +234,8 @@ class NTARR extends React.Component{
 			</div>*/}
 
 			<div style={style} className ="row">
-		      <label className="col-sm-5 col-sm-4 col-form-label" style={styleLabel}><img src={fromArrow} /> Beginning Station</label>
-		      <div className="col-sm-7 col-sm-8">
+		      <label className="col-sm-5 col-sm-4" style={styleLabel}><img src={fromArrow} /> Your Beginning Station</label>
+		      <div className="input-group col-sm-7 col-sm-8">
 		      <Select
 		      id = "beginning"
 		      style={styleSelect}
@@ -249,15 +244,15 @@ class NTARR extends React.Component{
 		      onChange={this.handleChange1}
 		      options={OPTION}
 		      />
+		      <div className="input-group-btn">
+		      <button className="btn btn-link" onClick={this.onClickNearMe}><img src={nearMe} /></button>
 		      </div>
-		      <div className="col-sm-1 col-sm-1">
-		      <button className="btn btn-link" onClick={this.onClickNearMe} style={styleButton}><img src={nearMe} /></button>
 		      </div>
 		    </div>
 
 		    <div style={style} className ="row">
-		      <label className="col-sm-5 col-sm-4 col-form-label" style={styleLabel}><img src={toArrow} /> Destination Station</label>
-		      <div className="col-sm-7 col-sm-8">
+		      <label className="col-sm-5 col-sm-4" style={styleLabel}><img src={toArrow} /> Your Destination Station</label>
+		      <div className="input-group col-sm-7 col-sm-8">
 		      <Select
 		      style={styleSelect}
 		      name="destination"
@@ -265,9 +260,9 @@ class NTARR extends React.Component{
 		      onChange={this.handleChange2}
 		      options={OPTION}
 		      />
+		      <div className="input-group-btn">
+		      <button className="btn btn-link" onClick={this.onClickNearMe2}><img src={nearMe} /></button>
 		      </div>
-		      <div className="col-sm-1 col-sm-1">
-		      <button className="btn btn-link" onClick={this.onClickNearMe2} style={styleButton}><img src={nearMe} /></button>
 		      </div>
 		    </div>
 
