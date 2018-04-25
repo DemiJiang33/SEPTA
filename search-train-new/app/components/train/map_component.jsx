@@ -1,5 +1,5 @@
 import React from "react";
-
+import {withRouter} from "react-router-dom";
 import bluedot from '../../../images/bluedot.png';
 
 var mapMarkersArray = []; //makes an array of the markers you place on the map,
@@ -7,6 +7,7 @@ var mapMarkersArray = []; //makes an array of the markers you place on the map,
 var map;
 var selectedInfoWindow = null;
 var selectedMarkerID = null;
+var ctaLayer;
 
 /*const DEFAULT_POSITION = {
   lat: 39.9526,
@@ -49,13 +50,6 @@ class MapComponent extends React.Component {
       //position: DEFAULT_POSITION
     });
     this.addYourLocationButton(map, myMarker);
-
-    /*//Hide the link of the Google logo
-    google.maps.event.addListenerOnce(map, 'idle', function(){
-      $("#map a").click(function(){
-        return false;
-      });
-    });*/
     
     //Close all points of interest
     var noPoi = [
@@ -92,6 +86,7 @@ class MapComponent extends React.Component {
     clearTimeout(this.timeoutID1);
     clearTimeout(this.timeoutID2);
     clearTimeout(this.refreshMapID);
+    clearTimeout(this.septaTransitViewID);
   }
 
   displayLocationOnce(map, marker){
@@ -198,8 +193,59 @@ class MapComponent extends React.Component {
       //map.setCenter(DEFAULT_POSITION);
     });
 
-    var ctaLayer = new google.maps.KmlLayer({
-      url: 'https://www3.septa.org/api/TrainView/regionalrail.kml',
+    var url;
+    var pathArray = this.props.location.pathname.split( 'regionalrail/' );
+    var line = pathArray[1];
+    switch ( line ) 
+    {
+      case 'Warminster':
+      url = 'https://www3.septa.org/api/TrainView/WAR.kml';
+      break;
+      case 'Cynwyd':
+      url = 'https://www3.septa.org/api/TrainView/CYN.kml';
+      break;
+      case 'West Trenton':
+      url = 'https://www3.septa.org/api/TrainView/WTR.kml';
+      break;
+      case 'Fox Chase':
+      url = 'https://www3.septa.org/api/TrainView/FOX.kml';
+      break;
+      case 'Lansdale\/Doylestown':
+      url = 'https://www3.septa.org/api/TrainView/LAN.kml';
+      break;
+      case 'Chestnut Hill West':
+      url = 'https://www3.septa.org/api/TrainView/CHW.kml';
+      break;
+      case 'Chestnut Hill East':
+      url = 'https://www3.septa.org/api/TrainView/CHE.kml';
+      break;
+      case 'Media\/Elwyn':
+      url = 'https://www3.septa.org/api/TrainView/MED.kml';
+      break;
+      case 'Manayunk\/Norristown':
+      url = 'https://www3.septa.org/api/TrainView/NOR.kml';
+      break;
+      case 'Wilmington\/Newark':
+      url = 'https://www3.septa.org/api/TrainView/WIL.kml';
+      break;
+      case 'Trenton':
+      url = 'https://www3.septa.org/api/TrainView/TRE.kml';
+      break;
+      case 'Paoli\/Thorndale':
+      url = 'https://www3.septa.org/api/TrainView/PAO.kml';
+      break;
+      case 'Airport':
+      url = 'https://www3.septa.org/api/TrainView/AIR.kml';
+      break;
+      case 'Glenside Combined':
+      url = 'https://www3.septa.org/api/TrainView/GC.kml';
+      break;
+      default:
+            url = 'https://www3.septa.org/api/TrainView/regionalrail.kml';
+          }
+
+    ctaLayer = new google.maps.KmlLayer({
+      url: url,
       map: map,
       preserveViewport:false
     }); 
@@ -405,6 +451,20 @@ class MapComponent extends React.Component {
       );
   }
 
+  reloadMap(){
+    ctaLayer.setMap(null); 
+
+    this.septaTransitViewID = setTimeout(
+      () => this.septaTrainView(),
+      100 // update once
+      );
+
+    this.refreshMapID = setTimeout(
+      () => this.initMap(),
+      500 // update once
+      );
+  }
+
   render() {
 
     const buttonStyle = {
@@ -418,10 +478,13 @@ class MapComponent extends React.Component {
       <div id ="mapUpdate">
       <button className ='btn btn-primary' id="refresh" style ={buttonStyle} 
       onClick={this.refreshMap}>Refresh the Map (it's hidden)</button>
+      <button className ='btn btn-default btn-xs' id="reloadTrain"
+      style={buttonStyle} 
+      onClick={this.reloadMap.bind(this)}>Reload (it's hidden) </button>
       <div ref="map" id="map">I should be a map!</div>
       </div>
       );
   }
 }
 
-export default MapComponent;
+export default withRouter(MapComponent);

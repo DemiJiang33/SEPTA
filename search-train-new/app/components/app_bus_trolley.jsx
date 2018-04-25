@@ -6,12 +6,12 @@ import ScrollUpButton from "react-scroll-up-button";
 //import Clock from './clock.jsx';
 import Header from './header.jsx';
 import SocialMedia from './social_media.jsx';
-import BTHeader from './bt_header.jsx';
-import BTHeader2 from './bt_header2.jsx';
-import BTHeader3 from './bt_header3.jsx';
+import BTHeader from './bus/bt_header.jsx';
+import BTHeader2 from './bus/bt_header2.jsx';
+import BTHeader3 from './bus/bt_header3.jsx';
 
 import Bus from './bus/bus.jsx';
-import DefaultMap from './default_map.jsx';
+import DefaultMap from './bus/default_map.jsx';
 
 const array = [10,11,13,15,34,36,101,102];
 Array.prototype.contains = function(obj) {

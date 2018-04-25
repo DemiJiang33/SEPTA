@@ -18,9 +18,15 @@ class Results extends React.Component{
 	}
 
 	componentWillReceiveProps(nextProps){
+		//console.log(nextProps.query);
 		var foundTrains = nextProps.trains.filter(train =>{
-			return train.trainno.toLowerCase().match(nextProps.query.toLowerCase()) ||
-			train.line.toLowerCase().match(nextProps.query.toLowerCase());
+			if(nextProps.query == 'glenside combined'){
+				return train.line.toLowerCase().match('warminster')
+				|| train.line.toLowerCase().match('lansdale\/doylestown')
+				|| train.line.toLowerCase().match('west trenton');
+			}else{
+				return train.line.toLowerCase().match(nextProps.query.toLowerCase());
+			}
 		});
 
 		foundTrains.sort(natSort);

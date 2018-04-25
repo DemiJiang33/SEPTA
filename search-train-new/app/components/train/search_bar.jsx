@@ -1,34 +1,52 @@
 import React from "react";
 import {withRouter} from "react-router-dom";
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
+
+import OPTION from '../../../data/regionalRailOption.json';
 
 //This is the Search Bar
 class SearchBar extends React.Component{
 	constructor(props){
 		super(props);
-		this.handleKeyPress = this.handleKeyPress.bind(this);		
+		this.state ={
+			query: '',
+			//initiate state.query
+		};	
 	}
 
 	componentDidMount(){
 		//console.log(this.props.line);
+		//this.props.line is the value after /regionalrail/ in url address
 		this.props.onQuery(this.props.line);
-		$("#changeInput").val(this.props.line);
+		this.setState({'query':this.props.line});
 	}
 
 	handleQuery(event){
-		this.props.onQuery(event.target.value);
-		/*console.log(event.target.value);*/
+		if(event){
+			this.setState({'query':event.value});
+			this.props.onQuery(event.value);
+			this.props.history.push(`/regionalrail/${event.value}`);
+		}else{
+			this.setState({'query':''});
+			this.props.onQuery('');
+			this.props.history.push(`/regionalrail/`);
+		}
+		this.timerID = setTimeout(
+				() => this.onClickReload(),
+			100 // update after 0.1 second
+			);
+		//console.log(event.target.value);
 	}
 
 	onClickBind(){
-		//Bind this click with #refresh
+		//Bind this click with #refresh (in Train/map_component.jsx)
 		$("#refresh").click();
 	}
 
-	handleKeyPress(e) {
-		this.props.history.push(`/regionalrail/${e.target.value}`);
-		if (e.which === 40 || e.which === 91 || e.which === 92) { // '(' or '[' or '\'
-			e.preventDefault();
-	    }
+	onClickReload(){
+		//Bind this click with #reloadTrain (in Train/map_component.jsx)
+		$("#reloadTrain").click();
 	}
 
 	render(){
@@ -40,6 +58,12 @@ class SearchBar extends React.Component{
 			marginTop: '8px'
 		}
 
+		const styleSelect={
+			fontSize: 'large'
+		}
+
+		const { query } = this.state;
+
 		return(
 			<div className ="search-bar">
 
@@ -47,8 +71,14 @@ class SearchBar extends React.Component{
 
 		    <form style={styleForm}>
 		    <div className="input-group">
-		    <input id="changeInput" type="text" ref="form" className="form-control" onChange ={this.handleQuery.bind(this)} 
-		    onKeyPress={this.handleKeyPress} placeholder="Search for Train # or Line Name"/>
+		    <Select
+		      style={styleSelect}
+		      name="search-bar"
+		      placeholder = "Select Line..."
+		      value={query}
+		      onChange={this.handleQuery.bind(this)}
+		      options={OPTION}
+		      />
 		    <div className="input-group-btn">
 		    <button type="button" className ='btn btn-primary' 
 			onClick={this.onClickBind.bind(this)}>
