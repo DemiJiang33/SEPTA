@@ -44,11 +44,11 @@ class SocialMedia extends React.Component{
 		return(
 			<div>
 			<p>
-			<img src ={status} />{this.state.weather.weather[0].main}&nbsp;
+			<img src ={status} alt="status" />{this.state.weather.weather[0].main}&nbsp;
 			<span style={styles}>{this.state.weather.main.temp}&#8457;&nbsp;
 			({this.state.weather.main.temp_min}&#8457;~{this.state.weather.main.temp_max}&#8457;)</span>
 			</p>
-			<h5>Copyright SEPTA &nbsp;<img src ={favicon} />&nbsp; All rights Reserved</h5>	
+			<h5>Copyright SEPTA &nbsp;<img src ={favicon} alt="favicon" />&nbsp; All rights Reserved</h5>	
 			</div>
 			)
 	}

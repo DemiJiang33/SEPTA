@@ -61,7 +61,7 @@ class Advisory extends React.Component{
 		return(
 			<div>
 			<h4 className="well well-sm" style ={title}>
-			<img src={advisoryTopIcon} /><strong> Advisory for Line # {this.props.train.line}</strong>
+			<img src={advisoryTopIcon} alt="advisory" /><strong> Advisory for Line # {this.props.train.line}</strong>
 			</h4>
 			<div id ="Adcontent" style={divStyle} dangerouslySetInnerHTML={{__html: this.state.msg}} />
 			</div>

@@ -208,11 +208,11 @@ class Result extends React.Component{
 			<span style={tooltipStyle}> Click to {info} schedule for # {this.props.train.trainNo}</span>
 
 			<a href="#" onClick={this.onClickAlert.bind(this)} style={alertImageStyle}>
-			<img src={alertIcon} />
+			<img src={alertIcon} alt="alert"/>
 			</a>&nbsp;&nbsp;&nbsp;
 
 			<a href="#" onClick={this.onClickAdvisory.bind(this)} style={advisoryImageStyle}>
-			<img src={advisoryIcon} />
+			<img src={advisoryIcon} alt="advisory"/>
 			</a>
 
 			</td>

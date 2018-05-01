@@ -1,7 +1,6 @@
 import React from "react";
 import {withRouter} from "react-router-dom";
 import Select from 'react-select';
-import 'react-select/dist/react-select.css';
 
 import OPTION from '../../../data/regionalRailOption.json';
 

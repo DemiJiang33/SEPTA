@@ -35,7 +35,7 @@ class Clock extends React.Component{
 
 		return(
 			<div id ="clock">
-			<p id ="date">{this.props.title}<img src={favicon} /> {day} <br/>
+			<p id ="date">{this.props.title}<img src={favicon} alt="favicon" /> {day} <br/>
 			{this.state.date.toLocaleString()}</p>
 			</div>
 			)

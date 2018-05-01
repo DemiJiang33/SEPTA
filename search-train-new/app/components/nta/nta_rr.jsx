@@ -210,7 +210,7 @@ class NTARR extends React.Component{
 
 		return(
 			<div>
-			<h3 style={styleTitle}><img src={RRStatus} />&nbsp;&nbsp;Regional Rail</h3>
+			<h3 style={styleTitle}><img src={RRStatus} alt="RRStatus" />&nbsp;&nbsp;Regional Rail</h3>
 
 			{/*<div style={styleRadio}>
 			<label className="radio-inline">
@@ -234,7 +234,7 @@ class NTARR extends React.Component{
 			</div>*/}
 
 			<div style={style} className ="row">
-		      <label className="col-sm-5 col-sm-4" style={styleLabel}><img src={fromArrow} /> Your Beginning Station</label>
+		      <label className="col-sm-5 col-sm-4" style={styleLabel}><img src={fromArrow} alt="fromArrow" /> Your Beginning Station</label>
 		      <div className="input-group col-sm-7 col-sm-8">
 		      <Select
 		      id = "beginning"
@@ -245,13 +245,13 @@ class NTARR extends React.Component{
 		      options={OPTION}
 		      />
 		      <div className="input-group-btn">
-		      <button className="btn btn-link" onClick={this.onClickNearMe}><img src={nearMe} /></button>
+		      <button className="btn btn-link" onClick={this.onClickNearMe}><img src={nearMe} alt="nearMe" /></button>
 		      </div>
 		      </div>
 		    </div>
 
 		    <div style={style} className ="row">
-		      <label className="col-sm-5 col-sm-4" style={styleLabel}><img src={toArrow} /> Your Destination Station</label>
+		      <label className="col-sm-5 col-sm-4" style={styleLabel}><img src={toArrow} alt="toArrow" /> Your Destination Station</label>
 		      <div className="input-group col-sm-7 col-sm-8">
 		      <Select
 		      style={styleSelect}
@@ -261,7 +261,7 @@ class NTARR extends React.Component{
 		      options={OPTION}
 		      />
 		      <div className="input-group-btn">
-		      <button className="btn btn-link" onClick={this.onClickNearMe2}><img src={nearMe} /></button>
+		      <button className="btn btn-link" onClick={this.onClickNearMe2}><img src={nearMe} alt="nearMe" /></button>
 		      </div>
 		      </div>
 		    </div>

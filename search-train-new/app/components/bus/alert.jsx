@@ -27,7 +27,7 @@ class Alert extends React.Component{
 		return(
 			<div>
 			<h4 className="well well-sm" style ={title}>
-			<img src={alertTopIcon} />  <strong> Alert for {bt} # {this.props.route}</strong></h4>
+			<img src={alertTopIcon} alt="alertTopIcon" />  <strong> Alert for {bt} # {this.props.route}</strong></h4>
 			<p dangerouslySetInnerHTML={{__html: alerts.current_message}} />
 			</div>
 			);

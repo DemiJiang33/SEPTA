@@ -153,6 +153,28 @@ class SystemStatus extends React.Component{
 			float: 'none'
 		}
 
+		var clickedBus = {
+			backgroundColor: this.state.showBus ? '#333F48' : ''
+		}
+		var clickedTrolley ={
+			backgroundColor: this.state.showTrolley ? '#658D1B' : ''
+		}
+		var clickedRR ={
+			backgroundColor: this.state.showRR ? '#4F758B' : ''
+		}
+		var clickedMFL ={
+			backgroundColor: this.state.showMFL ? '#0072CE' : ''
+		}
+		var clickedBSL ={
+			backgroundColor: this.state.showBSL ? '#FF671F' : ''
+		}
+		var clickedNHSL ={
+			backgroundColor: this.state.showNHSL ? '#6D2077' : ''
+		}
+		var clickedCCT ={
+			backgroundColor: this.state.showCCT ? '#001489' : ''
+		}
+
 		return(
 			<div>
 
@@ -160,7 +182,7 @@ class SystemStatus extends React.Component{
 		    <hr/>
 
 			<div style={{float: 'left', width: '300px'}}>
-			<div style={{float: 'left', width: '55px'}}>
+			<div style={{float: 'left', marginLeft: '5px', width: '55px'}}>
 			<img alt="Service Alert" title="Service Alert" src={alert} />
 			<p style={{font: 'bold 10px helvetica'}}>Service Alert</p>
 			</div>
@@ -183,13 +205,13 @@ class SystemStatus extends React.Component{
 
             <center>
 			<ul style={ulShow} className="nav navbar-inverse">
-			<li style={ulLiShow}><a onClick={this.onClickBus} href="#" className="btn btn-lg btn-primary"><img src={busStatus}/>Bus</a></li>
-			<li style={ulLiShow}><a onClick={this.onClickTrolley} href="#" className="btn btn-lg btn-primary"><img src={trolleyStatus}/>Trolley</a></li>
-			<li style={ulLiShow}><a onClick={this.onClickRR} href="#" className="btn btn-lg btn-primary"><img src={RRStatus}/>Rail</a></li>
-			<li style={ulLiShow}><a onClick={this.onClickMFL} href="#" className="btn btn-lg btn-primary"><img src={MFLStatus}/>MFL</a></li>
-			<li style={ulLiShow}><a onClick={this.onClickBSL} href="#" className="btn btn-lg btn-primary"><img src={BSLStatus}/>BSL</a></li>
-			<li style={ulLiShow}><a onClick={this.onClickNHSL} href="#" className="btn btn-lg btn-primary"><img src={NHSLStatus}/>NHSL</a></li>
-			<li style={ulLiShow}><a onClick={this.onClickCCT} href="#" className="btn btn-lg btn-primary"><img src={CCTStatus}/>CCT</a></li>
+			<li style={ulLiShow}><a id="hoverBus" style={clickedBus} onClick={this.onClickBus} href="#" className="btn btn-lg btn-primary"><img src={busStatus} alt="busStatus" />Bus</a></li>
+			<li style={ulLiShow}><a id="hoverTrolley" style={clickedTrolley} onClick={this.onClickTrolley} href="#" className="btn btn-lg btn-primary"><img src={trolleyStatus} alt="trolleyStatus" />Trolley</a></li>
+			<li style={ulLiShow}><a id="hoverRR" style={clickedRR} onClick={this.onClickRR} href="#" className="btn btn-lg btn-primary"><img src={RRStatus} alt="RRStatus" />Rail</a></li>
+			<li style={ulLiShow}><a id="hoverMFL" style={clickedMFL} onClick={this.onClickMFL} href="#" className="btn btn-lg btn-primary"><img src={MFLStatus} alt="MFLStatus" />MFL</a></li>
+			<li style={ulLiShow}><a id="hoverBSL" style={clickedBSL} onClick={this.onClickBSL} href="#" className="btn btn-lg btn-primary"><img src={BSLStatus} alt="BSLStatus" />BSL</a></li>
+			<li style={ulLiShow}><a id="hoverNHSL" style={clickedNHSL} onClick={this.onClickNHSL} href="#" className="btn btn-lg btn-primary"><img src={NHSLStatus} alt="NHSLStatus" />NHSL</a></li>
+			<li style={ulLiShow}><a id="hoverCCT" style={clickedCCT} onClick={this.onClickCCT} href="#" className="btn btn-lg btn-primary"><img src={CCTStatus} alt="CCTStatus" />CCT</a></li>
 			</ul>
 			</center>
 

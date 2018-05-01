@@ -13,7 +13,8 @@ class RegionalRail extends React.Component{
 	}
 
 	componentDidMount(){
-		var url = "https://www3.septa.org/api/Alerts/get_alert_data.php?req1=rr_route_warm,rr_route_gc,rr_route_med,rr_route_apt,rr_route_che,rr_route_chw,rr_route_cyn,rr_route_fxc,rr_route_landdoy,rr_route_nor,rr_route_pao,rr_route_trent,rr_route_wilm,rr_route_wtren";
+		var url = "https://www3.septa.org/api/Alerts/index.php";
+		// old url "https://www3.septa.org/api/Alerts/get_alert_data.php?req1=rr_route_warm,rr_route_gc,rr_route_med,rr_route_apt,rr_route_che,rr_route_chw,rr_route_cyn,rr_route_fxc,rr_route_landdoy,rr_route_nor,rr_route_pao,rr_route_trent,rr_route_wilm,rr_route_wtren";
 		//get the detail of Alert data
 		fetchJsonp(url,{
 			timeout: 6000,
@@ -35,16 +36,18 @@ class RegionalRail extends React.Component{
 			<div>
 
 			<center>
-			<h3><img src={RRStatus} />&nbsp;&nbsp;Regional Rail Lines</h3>
+			<h3><img src={RRStatus} alt="RRStatus" />&nbsp;&nbsp;Regional Rail Lines</h3>
 			<hr/>
-			<h3>A-W</h3>
 			</center>
 
 			<ul className="line-status">
 			{this.state.statusLines.map(function(statusLine,i){
-				return(
+				if(statusLine.mode == 'Regional Rail'){
+					return(
 					<LineStatus statusLine={statusLine} key={i} />
 					)
+				}
+				
 			})}
 			<br className="brHiddenRR"/>
 			<br className="brHiddenRR"/>

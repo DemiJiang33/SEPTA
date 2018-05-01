@@ -88,13 +88,13 @@ class BusResults extends React.Component{
             <h4 className="well well-sm" style ={title}>
             <strong>{bt} {this.props.route}&nbsp;</strong>
             {(displayAlert=='block') && <a>
-			<img src={alertIcon} />
+			<img src={alertIcon} alt="alertIcon" />
 			</a>}
 			{(displayDetour=='block') && <a>
-			<img src={detourIcon} />
+			<img src={detourIcon} alt="detourIcon" />
 			</a>}
 			{(displayAdvisory=='block') && <a>
-			<img src={advisoryIcon} />
+			<img src={advisoryIcon} alt="advisoryIcon" />
 			</a>}
             </h4>
 

@@ -1,7 +1,7 @@
 ul.route-status{
-    -webkit-columns: 5;
-    -moz-columns: 5;
-    columns: 5;
+    -webkit-columns: 6;
+    -moz-columns: 6;
+    columns: 6;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -41,7 +41,40 @@ ul.others-cct-status{
     margin: 0;
     padding: 0;
 }
+br.brHidden{
+    display: none;
+}
+#hoverBus:hover{
+    background-color: #333F48;
+}
+#hoverTrolley:hover{
+    background-color: #658D1B;
+} 
+#hoverRR:hover{
+    background-color: #4F758B;
+}
+#hoverMFL:hover{
+    background-color: #0072CE;
+}
+#hoverBSL:hover{
+    background-color: #FF671F;
+}
+#hoverNHSL:hover{
+    background-color: #6D2077;
+}
+#hoverCCT:hover{
+    background-color: #001489;
+}
+
 @media screen and (max-width: 1024px){
+    ul.route-status{
+        -webkit-columns: 5;
+        -moz-columns: 5;
+        columns: 5;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
     ul.line-status{
         -webkit-columns: 2;
         -moz-columns: 2;
@@ -53,12 +86,15 @@ ul.others-cct-status{
     br.brHiddenRR{
         display: none;
     }
+    br.brHidden{
+        display: block;
+    }
 }
 @media screen and (max-width: 768px){
     ul.route-status{
-        -webkit-columns: 2;
-        -moz-columns: 2;
-        columns: 2;
+        -webkit-columns: 3;
+        -moz-columns: 3;
+        columns: 3;
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -77,6 +113,14 @@ ul.others-cct-status{
 }
 
 @media screen and (max-width: 425px){
+    ul.route-status{
+        -webkit-columns: 2;
+        -moz-columns: 2;
+        columns: 2;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
     ul.line-status{
         -webkit-columns: 1;
         -moz-columns: 1;

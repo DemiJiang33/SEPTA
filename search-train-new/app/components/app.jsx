@@ -19,14 +19,14 @@ class App extends React.Component{
 			<br/>
 			<div>
 			  <Link to='/regionalrail'>
-			    <img src={RegionalRail} />
+			    <img src={RegionalRail} alt="RegionalRail" />
 			    <br/>
 			    <h4>Regional Rail</h4>
 			  </Link>
 			  <br/>
 			  <br/>
 			  <Link to='/bus_trolley'>
-			    <img src={BusTrolly} />
+			    <img src={BusTrolly} alt="BusTrolly" />
 			    <br/>
 			    <h4>Bus/Trolley</h4>
 			  </Link>

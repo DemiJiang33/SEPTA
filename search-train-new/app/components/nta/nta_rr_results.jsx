@@ -75,8 +75,8 @@ class NTARRResults extends React.Component{
 			</center>}
 
 			<h4 className="well well-sm" style ={title}>
-			<img src={fromArrow} /> <strong> {this.props.bStation} </strong>&nbsp;&nbsp;
-			<img src={toArrow} /> <strong> {this.props.dStation} </strong>
+			<img src={fromArrow} alt="fromArrow" /> <strong> {this.props.bStation} </strong>&nbsp;&nbsp;
+			<img src={toArrow} alt="toArrow" /> <strong> {this.props.dStation} </strong>
 			</h4>
 
 			{this.state.show && 

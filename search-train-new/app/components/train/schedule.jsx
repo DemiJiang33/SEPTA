@@ -88,7 +88,7 @@ class Schedule extends React.Component{
     	return(
     		<div ref="myRef">
             <h4 className="well well-sm" style ={title}>
-            <img src={TrainDefaultSchedule} />
+            <img src={TrainDefaultSchedule} alt="TrainDefaultSchedule" />
             <strong> Schedule for Train # {train.trainNo}</strong>
             </h4>
 			<table>

@@ -9,36 +9,34 @@ import pinIcon from '../../../images/pin-icon.png';
 class LineStatus extends React.Component{
 	constructor(props){
 		super(props);
-		this.state = {
-			statusLine: props.statusLine
-		}
 	}
 
 	render(){
 		//console.log(this.state.statusLine);
 
 		const styleAlert={
-			visibility: this.state.statusLine.current_message ? 'visible' : 'hidden'
+			visibility: this.props.statusLine.isalert == 'Y' ? 'visible' : 'hidden'
 		}
 
 		const styleAdvisory={
-			visibility: this.state.statusLine.advisory_message ? 'visible' : 'hidden'
+			visibility: this.props.statusLine.isadvisory == 'Yes' ? 'visible' : 'hidden'
 		}
 
 		const styleDetour={
-			visibility: this.state.statusLine.detour_message ? 'visible' : 'hidden'
+			visibility: this.props.statusLine.isdetour == 'Y' ? 'visible' : 'hidden'
 		}
 
 		return(
 			<li>
 			<Link to={'/regionalrail/'+this.props.statusLine.route_name}>
-			<center>
-			<span style = {{fontSize: 'large'}}>{this.props.statusLine.route_name}</span>
-			<img style={styleAlert} src={alertIcon} />
-			<img style={styleDetour} src={detourIcon} /> 
-			<img style={styleAdvisory} src={advisoryIcon} /> 
-			<img src={pinIcon} />
-			</center>
+			<span style = {{fontSize: 'large', marginLeft: '10px'}}>
+			{this.props.statusLine.route_name}</span>
+			<span style = {{float: 'right'}}>
+			<img style={styleAlert} src={alertIcon} alt="alertIcon" />
+			<img style={styleDetour} src={detourIcon} alt="detourIcon" /> 
+			<img style={styleAdvisory} src={advisoryIcon} alt="advisoryIcon" /> 
+			<img src={pinIcon} alt="pinIcon" />
+			</span>
 			</Link>
 			<hr/>
 			</li>

@@ -82,25 +82,25 @@ class OthersDetail extends React.Component{
             <h4 className="well well-sm" style ={title}>
             <strong>{this.props.status.route_name}&nbsp;</strong>
             {(displayAlert=='block') && <a>
-			<img src={alertIcon} />
+			<img src={alertIcon} alt="alertIcon" />
 			</a>}
 			{(displayDetour=='block') && <a>
-			<img src={detourIcon} />
+			<img src={detourIcon} alt="detourIcon" />
 			</a>}
 			{(displayAdvisory=='block') && <a>
-			<img src={advisoryIcon} />
+			<img src={advisoryIcon} alt="advisoryIcon" />
 			</a>}
             </h4>
 
             <div id="alertDiv" style={alertStyle}>
 			<h4 className="well well-sm" style ={title}>
-			<img src={alertTopIcon} />  <strong> Alert for line # {this.props.status.route_name}</strong></h4>
+			<img src={alertTopIcon} alt="alertTopIcon" />  <strong> Alert for line # {this.props.status.route_name}</strong></h4>
 			<p dangerouslySetInnerHTML={{__html: this.props.status.current_message}} />
 			</div>
 
 			<div id="detourDiv" style={detourStyle}>
 			<h4 className="well well-sm" style ={title}>
-			<img src={detourTopIcon} /> <strong> Detours for line # {this.props.status.route_name} </strong></h4>
+			<img src={detourTopIcon} alt="detourTopIcon" /> <strong> Detours for line # {this.props.status.route_name} </strong></h4>
 			<p dangerouslySetInnerHTML={{__html: '<strong>'+ 'Start Location: '+'</strong>'+ this.props.status.detour_start_location}} />
 			<p dangerouslySetInnerHTML={{__html: '<strong>'+ 'Start Date: '+'</strong>'+ this.props.status.detour_start_date_time}} />
 			<p dangerouslySetInnerHTML={{__html: '<strong>'+ 'End Date: '+'</strong>'+ this.props.status.detour_end_date_time}} />
@@ -110,7 +110,7 @@ class OthersDetail extends React.Component{
 
 			<div id="advisoryDiv" style={advisoryStyle}>
 			<h4 className="well well-sm" style ={title}>
-			<img src={advisoryTopIcon} /><strong> Advisory for line # {this.props.status.route_name}</strong>
+			<img src={advisoryTopIcon} alt="advisoryTopIcon" /><strong> Advisory for line # {this.props.status.route_name}</strong>
 			</h4>
 			<OthersAdvisory advisory={this.props.status.advisory_message} />
 			</div>

@@ -25,7 +25,7 @@ class Results extends React.Component{
 				|| train.line.toLowerCase().match('lansdale\/doylestown')
 				|| train.line.toLowerCase().match('west trenton');
 			}else{
-				return train.line.toLowerCase().match(nextProps.query.toLowerCase());
+				return train.line.toLowerCase().match('^' + nextProps.query.toLowerCase());
 			}
 		});
 
