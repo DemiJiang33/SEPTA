@@ -48,7 +48,7 @@ class SocialMedia extends React.Component{
 			<span style={styles}>{this.state.weather.main.temp}&#8457;&nbsp;
 			({this.state.weather.main.temp_min}&#8457;~{this.state.weather.main.temp_max}&#8457;)</span>
 			</p>
-			<h5>Copyright SEPTA &nbsp;<img src ={favicon} alt="favicon" />&nbsp; All rights Reserved</h5>	
+			<p>Copyright SEPTA &nbsp;<img src ={favicon} alt="favicon" />&nbsp; All rights Reserved</p>	
 			</div>
 			)
 	}

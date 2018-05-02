@@ -1,6 +1,6 @@
 import React from "react";
 import Select from 'react-select';
-import 'react-select/dist/react-select.css';
+import 'react-select/dist/react-select.min.css';
 
 import NTARRResults from './nta_rr_results.jsx';
 

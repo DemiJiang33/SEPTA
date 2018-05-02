@@ -7,6 +7,7 @@ import ReactDOM from "react-dom";
 import {BrowserRouter} from 'react-router-dom';
 
 import Routes from './components/routes.jsx';
+import Bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/style.css';
 
 ReactDOM.render(

@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const VENDOR_LIBS = [
-  'axios','es6-promise', 'lodash', 'fetch-jsonp', 'react-router-dom',
+  'axios','bootstrap','es6-promise', 'lodash', 'fetch-jsonp', 'react-router-dom',
   'react', 'react-dom', 'react-geolocated','react-scroll-up-button','react-select'
 ];
 
@@ -36,12 +36,12 @@ module.exports = {
         test: /\.css$/
       },
       {
-        test: /\.(jpe?g|png|gif|ico|svg)$/,
+        test: /\.(jpe?g|png|gif|ico|svg|woff|woff2|eot|ttf)$/,
         use: [
           //'url-loader',
           {
             loader: 'url-loader',
-            options: { limit: 40000 } //byte
+            options: { limit: 100000 } //byte
           },
           'image-webpack-loader'
         ]

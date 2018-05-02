@@ -1,6 +1,11 @@
 {
   "name": "realtime",
   "version": "3.1.1",
+  "description": "A realtime APP for SEPTA",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/septadev/realtime.git"
+  },
   "main": "webpack.common.js",
   "scripts": {
     "serve": "webpack-dev-server --open --config webpack.dev.js",
@@ -11,37 +16,38 @@
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-loader": "^6.4.1",
+    "babel-loader": "^7.1.1",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.11",
     "html-webpack-plugin": "^2.30.1",
     "image-webpack-loader": "^3.4.2",
     "json-loader": "^0.5.7",
+    "purgecss-webpack-plugin": "^0.22.0",
     "rimraf": "^2.6.2",
     "style-loader": "^0.19.0",
     "uglifyjs-webpack-plugin": "^1.1.2",
     "url-loader": "^0.6.2",
-    "webpack": "2.2.0",
+    "webpack": "3.2.0",
     "webpack-dev-server": "^2.7.1",
     "webpack-merge": "^4.1.1"
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "bootstrap": "^3.3.7",
     "es6-promise": "^4.1.1",
     "fetch-jsonp": "^1.1.3",
     "lodash": "^4.17.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-geolocated": "^2.3.1",
-    "react-iframe": "^1.0.7",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-scroll-up-button": "^1.5.11",
     "react-select": "^1.2.1",
     "redux": "^3.7.2"
-  },
-  "description": ""
+  }
 }
