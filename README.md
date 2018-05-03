@@ -31,7 +31,7 @@ Checkout this repo, install dependencies, then start the process with the follow
 > npm run <serve/build>
 ```
 ### Without Git?
-Click [here](https://github.com/septadev/realtime/) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+Click [here](https://github.com/czsyjss/SEPTA/) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
 ```
 > npm install
 > npm run serve <serve/build>
