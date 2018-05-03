@@ -5,6 +5,7 @@ import Schedule from './schedule.jsx';
 import Alert from './alert.jsx';
 import Advisory from './advisory.jsx';
 
+import suspendedIcon from '../../../images/suspended-icon.png';
 import advisoryIcon from '../../../images/advisory-icon.png';
 import alertIcon from '../../../images/alert-icon.png';
 
@@ -60,14 +61,35 @@ class Result extends React.Component{
 			position: 'absolute'
 		}
 
+		//console.log(this.props.train.late);
+		var lateMessage;
 		var color;
-		if((this.props.train.late != 'On Time') && ((this.props.train.late) != 'Suspended') && 
-			(this.props.train.late > '5')){
-			color = '#fff799';//loght yellow
-		}else if((this.props.train.late) == 'Suspended'){
-			color ='#ff9999';//light red
+		if((this.props.train.late > '5') && (this.props.train.late < '999')){
+			color = '#fff799';//loght yellow "late"
+			lateMessage = this.props.train.late;
+		}else if((this.props.train.late == '999') || (String(this.props.train.alert).includes('suspended'))){
+			color ='#ff9999';//light red "Suspended"
+			lateMessage = "Suspended";
+		}else if(this.props.train.late == '0'){
+			color = '';
+			lateMessage = "On Time";
 		}else{
 			color = '';
+			lateMessage = this.props.train.late;
+		}
+
+		var m;
+		if((this.props.train.late)==1){
+			m = ' min';
+		}else{
+			m = ' mins';
+		}
+
+		var lateM;
+		if( (lateMessage != 'On Time') && (lateMessage != 'Suspended')){
+			lateM = m; //Late
+		}else{
+			lateM = ''; //On time or Suspended
 		}
 
 		const late ={
@@ -111,20 +133,6 @@ class Result extends React.Component{
 			//width: '18.5%'
 		}
 
-		var m;
-		if((this.props.train.late)==1){
-			m = ' min';
-		}else{
-			m = ' mins';
-		}
-
-		var lateM;
-		if((this.props.train.late != 'On Time') && ((this.props.train.late) != 'Suspended')){
-			lateM = m;
-		}else{
-			lateM = '';
-		}
-
 		const tooltipStyle = {
 			display: (this.state.hover)&&(window.innerWidth>768) ? 'block' : 'none',
 			border: '1px solid #aaaaaa',
@@ -141,6 +149,8 @@ class Result extends React.Component{
 			marginBottom: '10px'
 		}
 
+        const alertSuspended = String(this.props.train.alert).includes('suspended') ? suspendedIcon : alertIcon
+        
 		const alertStyle ={
 			display: this.state.showAlert ? 'block' : 'none',
 			border: '1px solid #4d0000',
@@ -208,7 +218,7 @@ class Result extends React.Component{
 			<span style={tooltipStyle}> Click to {info} schedule for # {this.props.train.trainNo}</span>
 
 			<a href="#" onClick={this.onClickAlert.bind(this)} style={alertImageStyle}>
-			<img src={alertIcon} alt="alert"/>
+			<img src={alertSuspended} alt="alert"/>
 			</a>&nbsp;&nbsp;&nbsp;
 
 			<a href="#" onClick={this.onClickAdvisory.bind(this)} style={advisoryImageStyle}>
@@ -221,7 +231,7 @@ class Result extends React.Component{
 			<td id="hideTd2" style={late}>{this.props.train.dest}</td>
 			<td id="nextStopTd" style={lateStop}>{this.props.train.nextStop}</td>
 			{/*<td>{this.props.train.service}</td>*/}
-			<td style={lateStatus}>{this.props.train.late}{lateM}</td>
+			<td style={lateStatus}>{lateMessage}{lateM}</td>
 			{/*<td>{this.props.train.lat}</td>
 			<td>{this.props.train.lon}</td>
 			<td>{this.props.train.line}</td>*/}

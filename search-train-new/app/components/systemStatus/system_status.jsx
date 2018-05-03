@@ -8,6 +8,7 @@ import BusRoutes from './busRoutes.jsx'
 import RegionalRail from './regionalRail.jsx'
 import Others from './others.jsx'
 
+import suspended from '../../../images/suspended.png';
 import advisory from '../../../images/advisory.png';
 import alert from '../../../images/alert.png';
 import detour from '../../../images/detour.png';
@@ -180,8 +181,13 @@ class SystemStatus extends React.Component{
 
 			<Header />
 		    <hr/>
-
+            
 			<div style={{float: 'left', width: '300px'}}>
+			<center>
+			<div style={{float: 'left', marginLeft: '5px', width: '55px'}}>
+			<img alt="Line Suspended" title="Line Suspended" src={suspended} />
+			<p style={{font: 'bold 10px helvetica'}}>Line Suspended</p>
+			</div>
 			<div style={{float: 'left', marginLeft: '5px', width: '55px'}}>
 			<img alt="Service Alert" title="Service Alert" src={alert} />
 			<p style={{font: 'bold 10px helvetica'}}>Service Alert</p>
@@ -198,6 +204,7 @@ class SystemStatus extends React.Component{
 			<img alt="TransitView" title="TransitView" src={pin} />
 			<p style={{font: 'bold 10px helvetica'}}>TransitView</p>
 			</div>
+			</center>
 			</div>
 
 			<div style={{clear: 'both'}}>

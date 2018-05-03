@@ -69,23 +69,15 @@ class Results extends React.Component{
 		var alertTrains = nextProps.alertTrains;
 		//console.log(alertTrains);
 
-		var lateMessage;
 		for(var i = 0; i < foundTrains.length; i++){
 			for(var j =0; j<alertTrains.length; j++){
 				if (foundTrains[i].line == alertTrains[j].route_name){
-					if((foundTrains[i].late) =='0'){
-							lateMessage = 'On Time';
-						    }else if((foundTrains[i].late) =='999'){
-						    	lateMessage = 'Suspended';
-						    }else{
-						    	lateMessage = foundTrains[i].late;
-						    }
 					compareTrains[i] = {
 						trainNo:foundTrains[i].trainno,
 						source: foundTrains[i].SOURCE,
 						dest: foundTrains[i].dest,
 						nextStop: foundTrains[i].nextstop,
-						late: lateMessage,
+						late: foundTrains[i].late,
 						line: foundTrains[i].line,
 						id: alertTrains[j].route_id,
 						alert: alertTrains[j].current_message,
