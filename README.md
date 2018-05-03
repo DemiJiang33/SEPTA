@@ -25,8 +25,8 @@ There are two methods for getting started with this repo.
 ### With Git?
 Checkout this repo, install dependencies, then start the process with the following:
 ```
-> git clone https://github.com/septadev/realtime.git
-> cd realtime/<search-train-new>
+> git clone https://github.com/czsyjss/SEPTA.git
+> cd SEPTA
 > npm install
 > npm run <serve/build>
 ```
