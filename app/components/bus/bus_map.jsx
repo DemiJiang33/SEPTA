@@ -1,6 +1,7 @@
 import React from "react";
 
 import bluedot from '../../../images/bluedot.png';
+import bus from '../../../images/bus.png';
 
 var mapMarkersArray = []; //makes an array of the markers you place on the map,
                           //it is used in clearMarkers().
@@ -286,7 +287,7 @@ class BusMap extends React.Component{
 		this.marker = new google.maps.Marker({
 			position: {lat: parseFloat(markerPosition.lat), lng: parseFloat(markerPosition.lng)},
 			map: map,
-			icon: icon
+			icon: ((navigator.userAgent.includes("Edge"))||(navigator.userAgent.includes("MS")))? bus : icon
 		});
 
 		var m;

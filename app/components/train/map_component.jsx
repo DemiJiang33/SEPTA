@@ -1,6 +1,7 @@
 import React from "react";
 import {withRouter} from "react-router-dom";
 import bluedot from '../../../images/bluedot.png';
+import train from '../../../images/train.png';
 
 var mapMarkersArray = []; //makes an array of the markers you place on the map,
                           //it is ussd in clearMarkers().
@@ -357,9 +358,10 @@ class MapComponent extends React.Component {
         position: {lat: parseFloat(markerPosition.lat), lng: parseFloat(markerPosition.lng)},
         map: map,
           //animation: google.maps.Animation.DROP,
-          icon: iconNew
+          icon: ((navigator.userAgent.includes("Edge"))||(navigator.userAgent.includes("MS")))? train : iconNew
         });
 
+      //console.log(navigator.appVersion);
       // It is used to show message
       var m;
       if((markerIcon.late)==1){
