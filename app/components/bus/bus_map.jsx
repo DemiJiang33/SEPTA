@@ -1,7 +1,9 @@
 import React from "react";
 
 import bluedot from '../../../images/bluedot.png';
-import bus from '../../../images/bus.png';
+import busRed from '../../../images/bus_red.png';
+import busYellow from '../../../images/bus_yellow.png';
+import busBlue from '../../../images/bus_blue.png';
 
 var mapMarkersArray = []; //makes an array of the markers you place on the map,
                           //it is used in clearMarkers().
@@ -262,13 +264,17 @@ class BusMap extends React.Component{
 		var angle = markerIcon.heading + 180;
 		var circleArrow = '<path class="st0" d="M1.7,69.3c0,22.2,10.7,41.9,27.3,54.1c0.2,0.3,36.6,41.8,36.6,41.8c1.9,1.9,5.1,1.9,7,0 		c0,0,36.4-41.5,36.6-41.8c16.5-12.3,27.3-32,27.3-54.1c0-37.2-30.2-67.4-67.4-67.4S1.7,32.1,1.7,69.3z" transform="rotate(' + angle + ' 68.8 69.1)"/>'; 
 
-		var iconColor =''; 
+		var iconColor ='';
+		var iconOld; 
 		if((markerIcon.direction == 'EastBound')||(markerIcon.direction == 'NorthBound')){
 			iconColor = '00539F'; //blue
+			iconOld = busBlue;
 		}else if((markerIcon.direction == 'WestBound')||(markerIcon.direction == 'SouthBound')){
 			iconColor = 'EA0029'; //red
+			iconOld = busRed;
 		}else{
 			iconColor = 'F6891F'; //orange
+			iconOld = busYellow;
 		}
 
 		var bt = markersIcon[i].bt;
@@ -287,7 +293,7 @@ class BusMap extends React.Component{
 		this.marker = new google.maps.Marker({
 			position: {lat: parseFloat(markerPosition.lat), lng: parseFloat(markerPosition.lng)},
 			map: map,
-			icon: ((navigator.userAgent.includes("Edge"))||(navigator.userAgent.includes("MS")))? bus : icon
+			icon: ((navigator.userAgent.includes("Edge"))||(navigator.userAgent.includes("MS")))? iconOld : icon
 		});
 
 		var m;
