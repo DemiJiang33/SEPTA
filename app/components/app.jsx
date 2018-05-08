@@ -6,7 +6,7 @@ import Clock from './clock.jsx';
 import SocialMedia from './social_media.jsx';
 
 import RegionalRail from '../../images/RegionalRail.png';
-import BusTrolly from '../../images/BusTrolly.png';
+import BusTrolley from '../../images/BusTrolley.png';
 
 class App extends React.Component{
 
@@ -26,7 +26,7 @@ class App extends React.Component{
 			  <br/>
 			  <br/>
 			  <Link to='/bus_trolley'>
-			    <img src={BusTrolly} alt="BusTrolly" />
+			    <img src={BusTrolley} alt="BusTrolley" />
 			    <br/>
 			    <h4>Bus/Trolley</h4>
 			  </Link>

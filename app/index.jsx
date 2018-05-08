@@ -1,6 +1,8 @@
 import "babel-polyfill";
 import es6Promise from 'es6-promise';
 es6Promise.polyfill();
+import * as OfflinePluginRuntime from 'offline-plugin/runtime';
+OfflinePluginRuntime.install();
 
 import React from "react";
 import ReactDOM from "react-dom";
