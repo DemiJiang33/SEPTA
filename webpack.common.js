@@ -2,8 +2,8 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const ExtractTextPlugin = require('extract-text-webpack-plugin');
-var OfflinePlugin = require('offline-plugin');
 var WebpackPwaManifest = require('webpack-pwa-manifest');
+var OfflinePlugin = require('offline-plugin');
 
 const VENDOR_LIBS = [
   'axios','bootstrap','es6-promise', 'lodash', 'fetch-jsonp', 'react-router-dom',
@@ -61,11 +61,12 @@ module.exports = {
       name: 'SEPTA Realtime APP',
       short_name: 'Realtime',
       description: 'SEPTA Realtime APP',
+      theme_color: '#2196F3',
       background_color: '#144B88',
       icons: [
       {
-        src: "./images/BusTrolley.png",
-        sizes: '224x225'
+        src: "./images/SEPTA.png",
+        sizes: '512x512'
       }
       ]
     }),
