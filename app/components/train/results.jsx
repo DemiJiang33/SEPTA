@@ -2,7 +2,7 @@ import React from "react";
 import Result from './result.jsx';
 
 import MapComponent from './map_component.jsx';
-
+//Results is used to combine map component and result component
 class Results extends React.Component{
 
 	constructor(props){

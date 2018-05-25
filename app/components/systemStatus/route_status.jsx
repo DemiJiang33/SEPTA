@@ -1,3 +1,8 @@
+/**
+ * route_status.jsx file
+ * This is the status of specific route part of bus/trolley
+ *
+ */
 import React from "react";
 import {Link} from 'react-router-dom';
 

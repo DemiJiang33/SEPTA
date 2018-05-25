@@ -1,3 +1,8 @@
+/**
+ * nta_rr.jsx file
+ * This is the regional rail part of the Next to Arrive
+ *
+ */
 import React from "react";
 import Select from 'react-select';
 import 'react-select/dist/react-select.min.css';
@@ -238,6 +243,7 @@ class NTARR extends React.Component{
 		      <div className="input-group col-sm-7 col-sm-8">
 		      <Select
 		      id = "beginning"
+		      aria-label="search-bar-beginning"
 		      style={styleSelect}
 		      name="beginning"
 		      value={bStation}
@@ -254,6 +260,7 @@ class NTARR extends React.Component{
 		      <label className="col-sm-5 col-sm-4" style={styleLabel}><img src={toArrow} alt="toArrow" /> Your Destination Station</label>
 		      <div className="input-group col-sm-7 col-sm-8">
 		      <Select
+		      aria-label="search-bar-destination"
 		      style={styleSelect}
 		      name="destination"
 		      value={dStation}

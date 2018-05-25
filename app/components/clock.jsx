@@ -1,7 +1,7 @@
 import React from "react";
 import favicon from "../../images/favicon.ico";
 
-//Clock is used to get the updaed local time.
+//Clock is used to get the updated local time.
 class Clock extends React.Component{
 
 	constructor(props){

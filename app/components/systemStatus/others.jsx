@@ -1,3 +1,8 @@
+/**
+ * others.jsx file
+ * This is the others(subway, cct and etc.) part of the system status
+ *
+ */
 import React from "react";
 import fetchJsonp from "fetch-jsonp";
 

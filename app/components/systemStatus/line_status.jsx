@@ -1,3 +1,8 @@
+/**
+ * line_status.jsx file
+ * This is the status of specific line part of regional rail
+ *
+ */
 import React from "react";
 import {Link} from 'react-router-dom';
 

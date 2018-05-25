@@ -1,3 +1,8 @@
+/**
+ * system_status.jsx file
+ * This is the index of the system status part
+ *
+ */
 import React from "react";
 import fetchJsonp from "fetch-jsonp";
 import ScrollUpButton from "react-scroll-up-button";

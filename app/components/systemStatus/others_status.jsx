@@ -1,3 +1,8 @@
+/**
+ * others_status.jsx file
+ * This is the status of specific one of others(subway, cct and etc.)
+ *
+ */
 import React from "react";
 import {Link} from 'react-router-dom';
 

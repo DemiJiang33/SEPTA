@@ -1,5 +1,5 @@
 import React from "react";
-
+//Detour is used to get the one detour message of the specific bus/trolley
 class Detour extends React.Component{
 
 	render(){

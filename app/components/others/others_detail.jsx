@@ -1,3 +1,9 @@
+/**
+ * others_detail.jsx file
+ * This is the detail (alert, detour) of
+ * the others (subway, ccp and etc.) part
+ *
+ */
 import React from "react";
 
 import OthersAdvisory from './others_advisory.jsx';

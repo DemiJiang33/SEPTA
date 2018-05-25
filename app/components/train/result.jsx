@@ -9,7 +9,7 @@ import suspendedIcon from '../../../images/suspended-icon.png';
 import advisoryIcon from '../../../images/advisory-icon.png';
 import alertIcon from '../../../images/alert-icon.png';
 
-
+//Result is used to get the details of the specific train result
 class Result extends React.Component{
 	constructor(props){
 		super(props);

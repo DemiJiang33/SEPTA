@@ -4,7 +4,9 @@ import Select from 'react-select';
 
 import OPTION from '../../../data/regionalRailOption.json';
 
-//This is the Search Bar
+//This is the SearchBar class
+//using handleQuery(query) function to 
+//combine with the parent class in search.jsx
 class SearchBar extends React.Component{
 	constructor(props){
 		super(props);
@@ -72,6 +74,7 @@ class SearchBar extends React.Component{
 		    <div className="input-group">
 		    <Select
 		      style={styleSelect}
+		      aria-label="search-bar"
 		      name="search-bar"
 		      placeholder = "Select Line..."
 		      value={query}
@@ -79,7 +82,7 @@ class SearchBar extends React.Component{
 		      options={OPTION}
 		      />
 		    <div className="input-group-btn">
-		    <button type="button" className ='btn btn-primary' 
+		    <button aria-label="submit" type="submit" className ='btn btn-primary' 
 			onClick={this.onClickBind.bind(this)}>
 			<span className="glyphicon glyphicon-refresh"></span>
 			</button>

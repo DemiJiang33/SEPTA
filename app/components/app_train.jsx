@@ -1,3 +1,8 @@
+/**
+ * app_train.jsx file
+ * This is the access to the train(regional rail) component.
+ *
+ */
 import React from "react";
 import fetchJsonp from "fetch-jsonp";
 import ScrollUpButton from "react-scroll-up-button";

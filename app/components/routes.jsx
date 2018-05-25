@@ -1,3 +1,9 @@
+/**
+ * routes.jsx file
+ * This allows you to configure routes that show only the components 
+ * you specify on the page depending on the route. 
+ *
+ */
 import React from "react";
 import {Route, Switch} from 'react-router-dom';
 

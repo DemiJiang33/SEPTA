@@ -1,3 +1,8 @@
+/**
+ * nta_rr_results.jsx file
+ * This is used to get the details of all the regional rail
+ *
+ */
 import React from "react";
 import fetchJsonp from "fetch-jsonp";
 

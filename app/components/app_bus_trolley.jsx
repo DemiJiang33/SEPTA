@@ -1,3 +1,8 @@
+/**
+ * app_bus_trolley.jsx file
+ * This is the access to the bus/trolley component.
+ *
+ */
 import React from "react";
 import {withRouter} from "react-router-dom";
 import fetchJsonp from "fetch-jsonp";

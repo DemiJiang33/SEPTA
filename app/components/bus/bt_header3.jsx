@@ -1,3 +1,8 @@
+/**
+ * bt_header3.jsx file
+ * This is the header (Search Bar) when there are two or three bus/trolley routes selected.
+ *
+ */
 import React from "react";
 import {Link} from 'react-router-dom';
 import {withRouter} from "react-router-dom";

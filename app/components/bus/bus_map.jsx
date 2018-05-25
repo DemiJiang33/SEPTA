@@ -1,3 +1,8 @@
+/**
+ * bus_map.jsx file
+ * This is used to get the TransitView of bus/trolley
+ *
+ */
 import React from "react";
 
 import bluedot from '../../../images/bluedot.png';

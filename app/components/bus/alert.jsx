@@ -1,6 +1,6 @@
 import React from "react";
 import alertTopIcon from '../../../images/alert-top-icon.png';
-
+//Alert Class is used to get the alert of the specific bus/trolley
 class Alert extends React.Component{
 
 	render(){

@@ -15,7 +15,7 @@ var ctaLayer;
   lat: 39.9526,
   lng: -75.1652 
 };*/
-
+//MapComponent is used to get the trainview
 class MapComponent extends React.Component {
 
   constructor(props) {

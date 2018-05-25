@@ -6,7 +6,7 @@ import Detour from './detour.jsx';
 import detourTopIcon from '../../../images/detour-top-icon.png';
 
 let mounted = true;
-
+//Detours is used to get the detours of the specific bus/trolley
 class Detours extends React.Component{
 
 	constructor(props){

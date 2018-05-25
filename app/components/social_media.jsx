@@ -3,7 +3,7 @@ import fetchJsonp from "fetch-jsonp";
 
 import favicon from "../../images/favicon.ico";
 
-//SocialMedia is used to show the social media.
+//SocialMedia is used to show the weather and other tools.
 class SocialMedia extends React.Component{
 	constructor(props){
 		super(props);

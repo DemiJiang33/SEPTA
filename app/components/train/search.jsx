@@ -1,3 +1,8 @@
+/**
+ * search.jsx file
+ * This is the child class of app_trian.jsx
+ *
+ */
 import React from "react";
 
 import SearchBar from './search_bar.jsx';

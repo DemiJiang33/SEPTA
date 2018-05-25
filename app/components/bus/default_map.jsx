@@ -1,3 +1,8 @@
+/**
+ * default_map.jsx file
+ * This is the default map when no bus/trolley route is selected.
+ *
+ */
 import React from "react";
 
 import bluedot from '../../../images/bluedot.png';

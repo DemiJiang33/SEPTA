@@ -1,6 +1,11 @@
+/**
+ * nta_rr_result.jsx file
+ * This is used to get the details of the specific regional rail
+ *
+ */
 import React from "react";
 import '../../../style/nta.css';
-
+//NTARRResult is the child class of NTARRResults
 class NTARRResult extends React.Component{
 	render(){
 

@@ -1,3 +1,8 @@
+/**
+ * app.jsx file
+ * This allows you to choose to enter bus/trolley or train component 
+ *
+ */
 import React from "react";
 import ScrollUpButton from "react-scroll-up-button";
 import { Link } from 'react-router-dom';

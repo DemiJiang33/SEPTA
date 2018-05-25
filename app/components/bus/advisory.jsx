@@ -1,7 +1,7 @@
 import React from "react";
 
 import advisoryTopIcon from '../../../images/advisory-top-icon.png';
-
+//Advisory Class is used to get the advisory of the specific bus/trolley
 class Advisory extends React.Component{
 
 	constructor(props){

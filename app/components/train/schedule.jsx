@@ -4,7 +4,7 @@ import fetchJsonp from "fetch-jsonp";
 import ScheduleDetail from './schedule_detail.jsx';
 
 import TrainDefaultSchedule from '../../../images/TrainDefaultSchedule.png'
-
+//Schedule is used to loop the details of all the Trains
 class Schedule extends React.Component{
 	constructor(props){
 		super(props);

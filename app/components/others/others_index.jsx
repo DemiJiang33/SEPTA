@@ -1,3 +1,8 @@
+/**
+ * others_index.jsx file
+ * This is the index of the others (subway, ccp and etc.) part
+ *
+ */
 import React from "react";
 import ScrollUpButton from "react-scroll-up-button";
 import fetchJsonp from "fetch-jsonp";

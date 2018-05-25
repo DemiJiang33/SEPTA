@@ -1,3 +1,8 @@
+/**
+ * index.jsx file
+ * It's the access to the Realtime App
+ *
+ */
 import "babel-polyfill";
 import es6Promise from 'es6-promise';
 es6Promise.polyfill();

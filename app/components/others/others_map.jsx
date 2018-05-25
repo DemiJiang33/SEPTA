@@ -1,3 +1,8 @@
+/**
+ * others_map.jsx file
+ * This is the map of the others (subway, ccp and etc.) part
+ *
+ */
 import React from "react";
 
 import bluedot from '../../../images/bluedot.png';

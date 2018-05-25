@@ -1,5 +1,5 @@
 import React from "react";
-
+//ScheduleDetail is used to get the details of the specific Train Schedule
 class ScheduleDetail extends React.Component{
 	render(){
 		

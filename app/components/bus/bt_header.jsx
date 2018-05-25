@@ -1,3 +1,8 @@
+/**
+ * bt_header.jsx file
+ * This is the header (Search Bar) when there is no bus/trolley route selected.
+ *
+ */
 import React from "react";
 import {Link} from 'react-router-dom';
 import {withRouter} from "react-router-dom";
@@ -58,17 +63,17 @@ class BTHeader extends React.Component{
 		    <nav style={style} className="navbar navbar-inverse" >
 		    <div className="container-fluid ">
 
-		    <button type="button" className="navbar-toggle" id="collapse" data-toggle="collapse" data-target="#myNavbar">
+		    <button aria-label="navbar" type="button" className="navbar-toggle" id="collapse" data-toggle="collapse" data-target="#myNavbar">
 		    <span className="icon-bar"></span>
 		    <span className="icon-bar"></span>  
 		    <span className="icon-bar"></span>         
 		    </button>
 		    <form style={styleForm} onSubmit={this.handleSubmit}>
 		    <div className="input-group">
-		    <input type="text" ref="form" className="form-control" value={this.state.value} placeholder="Search for Route/Line #"
+		    <input aria-label="search-bar" type="text" ref="form" className="form-control" value={this.state.value} placeholder="Search for Route/Line #"
 		    onChange={this.handleChange} />
 		    <div className="input-group-btn">
-		    <button id="submitB" type="submit" className="btn btn-default" disabled={!isEnabled}>
+		    <button aria-label="submitB" id="submitB" type="submit" className="btn btn-default" disabled={!isEnabled}>
 		    <i className="glyphicon glyphicon-search"></i>
 		    </button>
 		    </div>

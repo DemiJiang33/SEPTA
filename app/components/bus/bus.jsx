@@ -1,3 +1,8 @@
+/**
+ * bus.jsx file
+ * This is the child class of app_bus_trolley.jsx
+ *
+ */
 import React from "react";
 import fetchJsonp from "fetch-jsonp";
 

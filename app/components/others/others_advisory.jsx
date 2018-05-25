@@ -1,3 +1,8 @@
+/**
+ * others_advisory.jsx file
+ * This is the advisory of the others (subway, ccp and etc.) part
+ *
+ */
 import React from "react";
 class OthersAdvisory extends React.Component{
 	constructor(props){

@@ -7,7 +7,8 @@ import Detours from './detours.jsx';
 import advisoryIcon from '../../../images/advisory-icon.png';
 import alertIcon from '../../../images/alert-icon.png';
 import detourIcon from '../../../images/detour-icon.png'
-
+//BusResults is used to combine bus component with
+//dvisory, alart and detours components.
 class BusResults extends React.Component{
 
 	render(){

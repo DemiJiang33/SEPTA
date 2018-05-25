@@ -1,7 +1,7 @@
 import React from "react";
 import suspendedTopIcon from '../../../images/suspended-top-icon.png';
 import alertTopIcon from '../../../images/alert-top-icon.png';
-
+//Alert Class is used to get the alert of the specific train
 class Alert extends React.Component{
 
 	render(){
