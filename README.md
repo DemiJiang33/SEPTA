@@ -120,5 +120,25 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.html [QSA,L]
 ```
+
+or change your httpd.conf and insert this:
+```
+<VirtualHost *:port>
+  ServerName xxx
+  DocumentRoot /var/www/html/xxx
+
+  <Directory "/var/www/html/xxx
+    ...
+
+    RewriteEngine on
+    # Don't rewrite files or directories
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+    # Rewrite everything else to index.html to allow html5 state links
+    RewriteRule ^ index.html [L]
+  </Directory>
+</VirtualHost>
+```
 Check [link1](https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writting-manually)
 or [link2](https://www.reddit.com/r/reactjs/comments/4e6lbt/getting_react_routing_to_work_with_apache2/y) for your refernece.
